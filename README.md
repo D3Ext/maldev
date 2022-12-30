@@ -3,7 +3,7 @@ A lightweight Golang library for malware development
 
 # Introduction
 
-The whole project is divided in multiple parts to optimize code management, it uses native Golang code at 100% and it tries to do all operations from scratch without almost any third-party package. If you have any idea feel free to contribute or if you want to contact me you can do it through Discord (***D3Ext#5965***)
+`maldev` aims to help malware developers, red teamers and anyone who is interested in cybersecurity. It uses native Golang code at 100% and it tries to do all operations from scratch without almost any third-party package. If you have any idea feel free to contribute or if you want to contact me you can do it through Discord (***D3Ext#5965***)
 
 # Features
 
@@ -70,48 +70,7 @@ go get -u https://github.com/D3Ext/maldev
 
 # Examples
 
-> Check if a file exists
-```go
-
-```
-
-> Check if given file/path is a file not a dir
-```go
-
-```
-
-> Check if given dir/path is a dir not a file
-```go
-
-```
-
-```go
-
-```
-
-```go
-
-```
-
-```go
-
-```
-
-```go
-
-```
-
-```go
-
-```
-
-```go
-
-```
-
-```go
-
-```
+In every directory there is a README.md which contains at least one example of defined functions
 
 # Third party
 
