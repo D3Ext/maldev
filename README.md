@@ -16,6 +16,9 @@ This are the different categories:
   - Sha1
   - Sha256
   - Sha512
+  - Rot13
+  - Rot47
+  - Bcrypt
   - Elliptic Curve
 - Networking
   - List all interfaces
@@ -35,6 +38,7 @@ This are the different categories:
 - System
   - Whoami
   - Get current dir
+  - Get system information
   - Find installed AVs/EDRs
 - Scanning
   - Ping an ip
