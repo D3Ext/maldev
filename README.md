@@ -3,7 +3,9 @@ A lightweight Golang library for malware development
 
 # Features
 
-The whole project is divided in multiple parts to optimize users code, it uses native Golang code at 100% and this are the different categories:
+The whole project is divided in multiple parts to optimize code management, it uses native Golang code at 100% and it tries to do all operations from scratch without almost any third-party package
+
+This are the different categories:
 
 - Cryptography
   - AES
@@ -53,6 +55,49 @@ The whole project is divided in multiple parts to optimize users code, it uses n
   - Copy a file or dir (recursive)
 
 # Examples
+
+> Check if a file exists
+```go
+
+```
+
+> Check if given file/path is a file not a dir
+```go
+
+```
+
+> Check if given dir/path is a dir not a file
+```go
+
+```
+
+```go
+
+```
+
+```go
+
+```
+
+```go
+
+```
+
+```go
+
+```
+
+```go
+
+```
+
+```go
+
+```
+
+```go
+
+```
 
 # Third party
 
