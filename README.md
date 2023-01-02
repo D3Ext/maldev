@@ -5,7 +5,7 @@
   <a href="#installation">Installation</a> •
   <a href="#examples">Examples</a> •
   <a href="#third-party">Third-party</a> •
-  <a href="#disclaimer">Disclaimer</a> •
+  <a href="#disclaimer">Disclaimer</a>
 </p>
 
 A lightweight Golang library for malware development and penetration testing purpouses
@@ -37,6 +37,7 @@ This are the different categories:
   - List all interfaces
   - Get info about an interface
   - List active ports wih its info
+  - Check internet connection
   - Get public ip
   - Download a file from URL
   - Get status code from URL
@@ -62,6 +63,7 @@ This are the different categories:
   - Hostscan
   - Portscan
   - Enumerate all subdomains from domain
+  - Check if a domain uses http or https
 - Logging
   - Status functions
   - ASCII banners
@@ -94,10 +96,15 @@ In every directory there is a README.md which contains at least one example of e
 As said above I have tried to implement all functions from scratch but I have also used some external packages:
 
 [columnize](https://github.com/ryanuber/columnize) to create tables and columns easily
+
 [go-ps](https://github.com/mitchellh/go-ps) to work with linux processes
+
 [go-sysinfo](https://github.com/elastic/go-sysinfo)
+
 [wintoken](https://github.com/fourcorelabs/wintoken) used to interact with Windows API and getting privileges info
+
 [EDRHunt](https://github.com/FourCoreLabs/EDRHunt) used in "system" part to look for installed AVs/EDRs
+
 [go-figure](https://github.com/common-nighthawk/go-figure) to create banners easily
 
 # Disclaimer
