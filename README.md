@@ -1,5 +1,14 @@
-# maldev
-A lightweight Golang library for malware development
+
+
+<p align="center">
+  <a href="#features">Features</a> •
+  <a href="#installation">Installation</a> •
+  <a href="#examples">Examples</a> •
+  <a href="#third-party">Third-party</a> •
+  <a href="#disclaimer">Disclaimer</a> •
+</p>
+
+A lightweight Golang library for malware development and penetration testing purpouses
 
 # Introduction
 
@@ -22,9 +31,13 @@ This are the different categories:
   - Rot47
   - Bcrypt
   - Elliptic Curve
-- Networking
+- Network
   - List all interfaces
   - Get info about an interface
+  - List active ports wih its info
+  - Get public ip
+  - Download a file from URL
+  - Get status code from URL
 - Misc
   - Generate random strings
   - Generate random integers
@@ -46,6 +59,7 @@ This are the different categories:
   - Ping an ip
   - Hostscan
   - Portscan
+  - Enumerate all subdomains from domain
 - Logging
   - Status functions
   - ASCII banners
@@ -54,6 +68,7 @@ This are the different categories:
 - Working with slices
   - Check if contains a string
   - Check if contains a string (insensitive)
+  - Remove duplicates
 - Working with files
   - Check if file exists
   - Check if path is file
@@ -70,9 +85,18 @@ go get -u https://github.com/D3Ext/maldev
 
 # Examples
 
-In every directory there is a README.md which contains at least one example of defined functions
+In every directory there is a README.md which contains at least one example of every defined function
 
 # Third party
+
+As said above I have tried to implement all functions from scratch but I have also used some external packages:
+
+[columnize](https://github.com/ryanuber/columnize) to create tables and columns easily
+[go-ps](https://github.com/mitchellh/go-ps) to work with linux processes
+[go-sysinfo](https://github.com/elastic/go-sysinfo)
+[wintoken](https://github.com/fourcorelabs/wintoken) used to interact with Windows API and getting privileges info
+[EDRHunt](https://github.com/FourCoreLabs/EDRHunt) used in "system" part to look for installed AVs/EDRs
+[go-figure](https://github.com/common-nighthawk/go-figure) to create banners easily
 
 # Disclaimer
 
@@ -80,6 +104,6 @@ Creator isn't in charge of any and has no responsibility for any kind of:
 
 - Unlawful or illegal use of the project.
 - Legal or Law infringement (acted in any country, state, municipality, place) by third parties and users.
-- Act against ethical and / or human moral, ethic, and peoples and cultures of the world.
+- Act against ethical and / or human moral, ethic, and peoples of the world.
 - Malicious act, capable of causing damage to third parties, promoted or distributed by third parties or the user through this software.
 
