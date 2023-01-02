@@ -12,7 +12,9 @@ A lightweight Golang library for malware development and penetration testing pur
 
 # Introduction
 
-`maldev` aims to help malware developers, red teamers and anyone who is interested in cybersecurity. It uses native Golang code at 100% and it tries to do all operations from scratch without almost any third-party package. If you have any idea feel free to contribute or if you want to contact me you can do it through Discord (***D3Ext#5965***)
+`maldev` aims to help malware developers, red teamers and anyone who is interested in cybersecurity. It uses native Golang code at 100% and it tries to do all operations from scratch without almost any third-party package.
+
+If you have any idea feel free to contribute or if you want to contact me you can do it through Discord (***D3Ext#5965***)
 
 # Features
 
