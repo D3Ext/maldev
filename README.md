@@ -8,11 +8,9 @@
   <a href="#disclaimer">Disclaimer</a>
 </p>
 
-A lightweight Golang library for malware development and penetration testing purpouses
-
 # Introduction
 
-`maldev` aims to help malware developers, red teamers and anyone who is interested in cybersecurity. It uses native Golang code at 100% and it tries to do all operations from scratch without almost any third-party package.
+`maldev` aims to help malware developers, red teamers and anyone who is interested in cybersecurity. It uses native Golang code at 100% and it tries to do all operations from scratch without almost any third-party package. The project isn't finished yet and the API may be unstable so your malware may break in a near future.
 
 If you have any idea feel free to contribute or if you want to contact me you can do it through Discord (***D3Ext#5965***)
 
