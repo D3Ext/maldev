@@ -51,7 +51,8 @@ This are the different categories:
   - Timestomping
 - Processes
   - List all process
-  - Interact with processes
+  - Get process name by PID
+  - Get list of processes by name
 - System
   - Whoami
   - Get current dir
@@ -99,7 +100,7 @@ As said above I have tried to implement all functions from scratch but I have al
 
 [go-ps](https://github.com/mitchellh/go-ps) to work with linux processes
 
-[go-sysinfo](https://github.com/elastic/go-sysinfo)
+[go-sysinfo](https://github.com/elastic/go-sysinfo) useful to get system information mainly for Windows
 
 [wintoken](https://github.com/fourcorelabs/wintoken) used to interact with Windows API and getting privileges info
 
@@ -124,6 +125,10 @@ Do you want to contribute with any interesting idea?
 `6` Create a new pull request
 
 ***New features and bugs reports are welcome***
+
+# TL;DR
+
+There are some functions that I have not implemented because they are really easy to use with `os` package like `os.Environ()` which retrieves all the environment variables, `os.Remove()` which removes a file.
 
 # Disclaimer
 
