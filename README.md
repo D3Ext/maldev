@@ -42,6 +42,9 @@ This are the different categories:
 - Misc
   - Generate random strings
   - Generate random integers
+  - Convert dates to epoch format
+  - Convert epoch to dates
+  - Convert text to leet
 - Shellcode
   - Process Injection techniques
   - Extra utils
@@ -70,7 +73,8 @@ This are the different categories:
 - Working with slices
   - Check if contains a string
   - Check if contains a string (insensitive)
-  - Remove duplicates
+  - Remove duplicates from []string
+  - Remove duplicates from []int
 - Working with files
   - Check if file exists
   - Check if path is file
