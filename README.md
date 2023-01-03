@@ -5,6 +5,7 @@
   <a href="#installation">Installation</a> •
   <a href="#examples">Examples</a> •
   <a href="#third-party">Third-party</a> •
+  <a href="#contributing">Contributing</a> •
   <a href="#disclaimer">Disclaimer</a>
 </p>
 
@@ -16,7 +17,7 @@
 
 This are the different categories:
 
-- Cryptography
+- [Cryptography](https://github.com/D3Ext/maldev/tree/main/crypto)
   - AES
   - RC4
   - Xor
@@ -29,7 +30,7 @@ This are the different categories:
   - Rot47
   - Bcrypt
   - Elliptic Curve
-- Network
+- [Network](https://github.com/D3Ext/maldev/tree/main/network)
   - List all interfaces
   - Get info about an interface
   - List active ports wih its info
@@ -37,44 +38,44 @@ This are the different categories:
   - Get public ip
   - Download a file from URL
   - Get status code from URL
-- Misc
+- [Misc](https://github.com/D3Ext/maldev/tree/main/misc)
   - Generate random strings
   - Generate random integers
   - Convert dates to epoch format
   - Convert epoch to dates
   - Convert text to leet
-- Shellcode
+- [Shellcode](https://github.com/D3Ext/maldev/tree/main/shellcode)
   - Process Injection techniques
   - Extra utils
-- Antiforensics
+- [Antiforensics](https://github.com/D3Ext/maldev/tree/main/antiforensics)
   - Wiping
   - Timestomping
-- Processes
+- [Processes](https://github.com/D3Ext/maldev/tree/main/process)
   - List all process
   - Get process name by PID
   - Get list of processes by name
-- System
+- [System](https://github.com/D3Ext/maldev/tree/main/system)
   - Whoami
   - Get current dir
   - Get system information
   - Find installed AVs/EDRs
-- Scanning
+- [Scanning](https://github.com/D3Ext/maldev/tree/main/scanning)
   - Ping an ip
   - Hostscan
   - Portscan
   - Enumerate all subdomains from domain
   - Check if a domain uses http or https
-- Logging
+- [Logging](https://github.com/D3Ext/maldev/tree/main/logging)
   - Status functions
   - ASCII banners
   - Progress bars
   - Colors
-- Working with slices
+- [Working with slices](https://github.com/D3Ext/maldev/tree/main/slices)
   - Check if contains a string
   - Check if contains a string (insensitive)
   - Remove duplicates from []string
   - Remove duplicates from []int
-- Working with files
+- [Working with files](https://github.com/D3Ext/maldev/tree/main/files)
   - Check if file exists
   - Check if path is file
   - Check if path is dir
@@ -82,7 +83,7 @@ This are the different categories:
 
 # Installation
 
-Just execute one command and it should be installed without errors
+Just execute this and it should be installed without problems
 
 ```sh
 go get -u https://github.com/D3Ext/maldev
@@ -128,7 +129,7 @@ Do you want to contribute with any interesting idea?
 
 # TL;DR
 
-There are some functions that I have not implemented because they are really easy to use with `os` package like `os.Environ()` which retrieves all the environment variables, `os.Remove()` which removes a file.
+There are some functions that I have not implemented because they are really easy to use with `os` package like `os.Environ()` which retrieves all the environment variables, or `os.Remove()` which removes a file.
 
 # Disclaimer
 
