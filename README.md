@@ -12,8 +12,6 @@
 
 `maldev` aims to help malware developers, red teamers and anyone who is interested in cybersecurity. It uses native Golang code at 100% and it tries to do all operations from scratch without almost any third-party package. The project isn't finished yet and the API may be unstable so your malware may break in a near future.
 
-If you have any idea feel free to contribute or if you want to contact me you can do it through Discord (***D3Ext#5965***)
-
 # Features
 
 This are the different categories:
@@ -91,21 +89,7 @@ go get -u https://github.com/D3Ext/maldev
 
 # Examples
 
-In every directory there is a README.md which contains at least one example of every defined function
-
-# Contributing
-
-Do you want to contribute with any interesting idea?
-
-`1` Open an issue to discuse your idea
-
-`2` Fork thye repo
-
-`3`
-
-`4`
-
-`5`
+In every directory there is a **README.md** which contains at least one example of every defined function, if you don't have enough creativity I encourage you to check out the `examples/` directory where I've developed some good examples which use ***maldev*** functions
 
 # Third party
 
@@ -122,6 +106,24 @@ As said above I have tried to implement all functions from scratch but I have al
 [EDRHunt](https://github.com/FourCoreLabs/EDRHunt) used in "system" part to look for installed AVs/EDRs
 
 [go-figure](https://github.com/common-nighthawk/go-figure) to create banners easily
+
+# Contributing
+
+Do you want to contribute with any interesting idea?
+
+`1` Open an issue to discuss your idea
+
+`2` Fork the repo
+
+`3` Create a branch
+
+`4` Commit your changes
+
+`5` Push to the branch
+
+`6` Create a new pull request
+
+***New features and bugs reports are welcome***
 
 # Disclaimer
 
