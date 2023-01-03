@@ -93,6 +93,20 @@ go get -u https://github.com/D3Ext/maldev
 
 In every directory there is a README.md which contains at least one example of every defined function
 
+# Contributing
+
+Do you want to contribute with any interesting idea?
+
+`1` Open an issue to discuse your idea
+
+`2` Fork thye repo
+
+`3`
+
+`4`
+
+`5`
+
 # Third party
 
 As said above I have tried to implement all functions from scratch but I have also used some external packages:
