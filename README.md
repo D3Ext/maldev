@@ -57,6 +57,11 @@ This are the different categories:
 - [System](https://github.com/D3Ext/maldev/tree/main/system)
   - Whoami
   - Get current dir
+  - Get home dir
+  - Get current user groups
+  - Find installed useful software
+  - List files and folders
+  - Get environment variables
   - Get system information
   - Find installed AVs/EDRs
 - [Scanning](https://github.com/D3Ext/maldev/tree/main/scanning)
@@ -127,9 +132,17 @@ Do you want to contribute with any interesting idea?
 
 ***New features and bugs reports are welcome***
 
+# TODO
+
+:negative_squared_cross_mark: Kerberos protocol implementation
+
+:negative_squared_cross_mark: Windows token impersonation
+
+:negative_squared_cross_mark: More system enumeration functions
+
 # TL;DR
 
-There are some functions that I have not implemented because they are really easy to use with `os` package like `os.Environ()` which retrieves all the environment variables, or `os.Remove()` which removes a file.
+There are some functions that I have not implemented because they are really easy to use with `os` package like `os.Remove()` which removes a file.
 
 # Disclaimer
 
