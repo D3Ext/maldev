@@ -1,4 +1,6 @@
-
+<p align="center">
+  <h1 align="center">Maldev</h1>
+</p>
 
 <p align="center">
   <a href="#features">Features</a> •
