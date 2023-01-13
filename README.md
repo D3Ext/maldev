@@ -98,6 +98,14 @@ go get -u https://github.com/D3Ext/maldev
 
 In every directory there is a **README.md** which contains at least one example of every defined function, if you don't have enough creativity I encourage you to check out the `examples/` directory where I've developed some good examples which use ***maldev*** functions
 
+# TODO
+
+:black_square_button: Kerberos protocol implementation
+
+:black_square_button: Windows token impersonation
+
+:black_square_button: More system enumeration functions
+
 # Third party
 
 As said above I have tried to implement all functions from scratch but I have also used some external packages:
@@ -132,17 +140,9 @@ Do you want to contribute with any interesting idea?
 
 ***New features and bugs reports are welcome***
 
-# TODO
-
-:negative_squared_cross_mark: Kerberos protocol implementation
-
-:negative_squared_cross_mark: Windows token impersonation
-
-:negative_squared_cross_mark: More system enumeration functions
-
 # TL;DR
 
-There are some functions that I have not implemented because they are really easy to use with `os` package like `os.Remove()` which removes a file.
+There are some functions that I have not implemented because they are really easy to do with `os` package like `os.Remove()` which removes a file.
 
 # Disclaimer
 
