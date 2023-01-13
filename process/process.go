@@ -18,7 +18,7 @@ import (
   "errors"
 )
 
-func GetProcesses() ([]ps.Process, error) {
+func GetLinuxProcesses() ([]ps.Process, error) {
   processes, err := ps.Processes()
   if err != nil {
     return processes, err
@@ -27,7 +27,7 @@ func GetProcesses() ([]ps.Process, error) {
   return processes, nil
 }
 
-func GetPidByName(name string) ([]int, error) {
+func GetPidByNameLin(name string) ([]int, error) {
   var pids []int
   processes, err := ps.Processes() // Get all processes
   if err != nil {
@@ -43,7 +43,7 @@ func GetPidByName(name string) ([]int, error) {
   return pids, nil
 }
 
-func GetNameByPid(pid int) (string, error) {
+func GetNameByPidLin(pid int) (string, error) {
   processes, err := ps.Processes()
   if err != nil {
     return "", err

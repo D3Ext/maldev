@@ -24,9 +24,9 @@ type WindowsProcess struct { // Windows process structure
   Exe             string  // Cmdline executable (e.g. explorer.exe)
 }
 
-func GetPidByName(name string) ([]int, error) { // Return all PIDs of a binary
+func GetPidByNameWin(name string) ([]int, error) { // Return all PIDs of a binary
   var pids_to_return []int
-  all_processes, err := GetProcesses()
+  all_processes, err := GetWinProcesses()
   if err != nil {
     return pids_to_return, err
   }
@@ -39,8 +39,8 @@ func GetPidByName(name string) ([]int, error) { // Return all PIDs of a binary
   return pids_to_return, nil
 }
 
-func GetNameByPid(pid int) (string, error) { // Return process name (.exe) of a specific PID
-  all_processes, err := GetProcesses()
+func GetNameByPidWin(pid int) (string, error) { // Return process name (.exe) of a specific PID
+  all_processes, err := GetWinProcesses()
   if err != nil {
     return "", err
   }
@@ -53,7 +53,7 @@ func GetNameByPid(pid int) (string, error) { // Return process name (.exe) of a 
   return "", errors.New("PID not found")
 }
 
-func GetProcesses() ([]WindowsProcess, error) { // Get all processes using native windows API
+func GetWinProcesses() ([]WindowsProcess, error) { // Get all processes using native windows API
   handle, err := windows.CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0)
   if err != nil {
     return nil, err
