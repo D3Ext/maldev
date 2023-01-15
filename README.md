@@ -104,6 +104,10 @@ In every directory there is a **README.md** which contains at least one example 
 
 :black_square_button: Kerberos protocol implementation
 
+:black_square_button: Windows hashes dump
+
+:black_square_button: Shikata Ga Nai polymorphic encoder
+
 :black_square_button: Windows token impersonation
 
 :black_square_button: More system enumeration functions
