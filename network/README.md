@@ -6,7 +6,6 @@
 package main
 
 import (
-  "fmt"
   "log"
 
   "github.com/D3Ext/maldev/network"
@@ -38,7 +37,7 @@ func main(){
     log.Fatal(err)
   }
 
-  fmt.Println(code)
+  fmt.Println(code) // Output: 200
 }
 ```
 
@@ -59,6 +58,8 @@ func main(){
   if err != nil {
     log.Fatal(err)
   }
+  
+  fmt.Println(interfaces) // Output: [eth0 lo]
 }
 ```
 
@@ -136,7 +137,7 @@ import (
 
 func main(){
   ip := network.GetPublicIp()
-  fmt.Println(ip)
+  fmt.Println(ip) // Example: 163.172.110.176
 }
 ```
 
