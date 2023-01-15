@@ -29,7 +29,7 @@ func UuidFromStringA(shellcode []byte) (error) {
 
 	addr, _, err := heapAlloc.Call(heapAddr, 0, 0x00100000)
 	if addr == 0 {
-    return err
+		return err
 	}
 
 	addrPtr := addr
