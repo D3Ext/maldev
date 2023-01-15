@@ -34,11 +34,11 @@ import (
 func main(){
   // Convert date to epoch format
   epoch := misc.DateToEpoch(2023, 1, 8, 11, 23, 0) // DateToEpoch(year, month, day, hour, minute, second int)
-  fmt.Println(epoch)
+  fmt.Println(epoch) // Output: 1673176980
 
   // Convert epoch to date
   date := misc.EpochToDate(epoch)
-  fmt.Println(date)
+  fmt.Println(date) // Output: 2023-1-8 11:23:0
 }
 ```
 
@@ -55,7 +55,7 @@ import (
 
 func main(){
   leet := misc.TextToLeet("This is a test")
-  fmt.Println(leet)
+  fmt.Println(leet) // Output: 7#¡$ ¡$ @ 73$7
 }
 ```
 
