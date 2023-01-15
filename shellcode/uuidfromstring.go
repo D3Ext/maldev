@@ -12,8 +12,8 @@ import (
 func UuidFromStringA(shellcode []byte) (error) {
 	uuids, err := shellcodeToUUID(shellcode)
 	if err != nil {
-    return err
-  }
+		return err
+	}
 
 	kernel32 := windows.NewLazySystemDLL("kernel32")
 	rpcrt4 := windows.NewLazySystemDLL("Rpcrt4.dll")
@@ -24,7 +24,7 @@ func UuidFromStringA(shellcode []byte) (error) {
 
 	heapAddr, _, err := heapCreate.Call(0x00040000, 0, 0)
 	if heapAddr == 0 {
-    return err
+		return err
   }
 
 	addr, _, err := heapAlloc.Call(heapAddr, 0, 0x00100000)
@@ -38,7 +38,7 @@ func UuidFromStringA(shellcode []byte) (error) {
 
 		rpcStatus, _, err := uuidFromString.Call(uintptr(unsafe.Pointer(&u[0])), addrPtr)
 		if rpcStatus != 0 {
-      return err
+			return err
 		}
 		addrPtr += 16
 	}
