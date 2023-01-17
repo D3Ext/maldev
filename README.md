@@ -13,7 +13,7 @@
 
 # Introduction
 
-`maldev` aims to help malware developers, red teamers and anyone who is interested in cybersecurity. It uses native Golang code at 100% and it tries to do all operations from scratch without almost any third-party package. The project isn't finished yet and the API may be unstable so your malware may break in a near future.
+`maldev` aims to help malware developers, red teamers and anyone who is interested in cybersecurity. It uses native Golang code at 100% and it tries to do all operations from scratch without any third-party package. The project isn't finished yet and the API may be unstable so your malware may break in a near future.
 
 # Features
 
@@ -119,6 +119,12 @@ In every directory there is a **README.md** which contains at least one example 
 As said above I have tried to implement all functions from scratch but I have also used some external packages:
 
 [columnize](https://github.com/ryanuber/columnize) to create tables and columns easily
+
+[go-netstat](https://github.com/cakturk/go-netstat)
+
+[gosecretsdump](https://github.com/C-Sto/gosecretsdump)
+
+[BananaPhone](https://github.com/C-Sto/BananaPhone)
 
 [go-ps](https://github.com/mitchellh/go-ps) to work with linux processes
 
