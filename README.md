@@ -106,6 +106,8 @@ In every directory there is a **README.md** which contains at least one example 
 
 :black_square_button: Windows hashes dump
 
+:black_square_button: Whois functions
+
 :black_square_button: Shikata Ga Nai polymorphic encoder
 
 :black_square_button: Windows token impersonation
@@ -159,3 +161,8 @@ Creator isn't in charge of any and has no responsibility for any kind of:
 - Act against ethical and / or human moral, ethic, and peoples of the world.
 - Malicious act, capable of causing damage to third parties, promoted or distributed by third parties or the user through this software.
 
+# License
+
+This project is under MIT license
+
+Copyright © 2022, *D3Ext*
