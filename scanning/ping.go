@@ -6,7 +6,11 @@ import (
   "time"
 )
 
-func CheckIfUp(ip_to_check string) (bool, error) { // Check if an IP is up using native golang
+const (
+  PingTimeout = 1200
+)
+
+func CheckIfUp(ip_to_check string, timeout int) (bool, error) { // Check if an IP is up using native golang
   var check bool
   pinger, err := ping.NewPinger(ip_to_check) // Create ping
   if err != nil {
@@ -17,7 +21,7 @@ func CheckIfUp(ip_to_check string) (bool, error) { // Check if an IP is up using
     pinger.SetPrivileged(true)
   }
   pinger.Count = 2 // Set ping config
-  pinger.Timeout = 1200 * time.Millisecond
+  pinger.Timeout = time.Duration(timeout) * time.Millisecond
   pinger.OnFinish = func(stats *ping.Statistics) {
     if stats.PacketsRecv == 2 { // Check if ip has received both packets
       check = true

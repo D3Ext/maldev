@@ -4,6 +4,7 @@ go 1.19
 
 require (
 	github.com/C-Sto/BananaPhone v0.0.0-20220220002628-6585e5913761
+	github.com/C-Sto/gosecretsdump v0.3.1
 	github.com/FourCoreLabs/EDRHunt v1.4.4
 	github.com/alwindoss/morse v1.0.1
 	github.com/briandowns/spinner v1.20.0
@@ -15,6 +16,8 @@ require (
 	github.com/fourcorelabs/wintoken v1.0.0
 	github.com/go-ping/ping v1.1.0
 	github.com/google/uuid v1.3.0
+	github.com/likexian/whois v1.14.4
+	github.com/likexian/whois-parser v1.24.2
 	github.com/mitchellh/go-ps v1.0.0
 	github.com/ryanuber/columnize v2.1.2+incompatible
 	golang.org/x/crypto v0.4.0
@@ -32,6 +35,7 @@ require (
 	github.com/hashicorp/errwrap v1.1.0 // indirect
 	github.com/hashicorp/go-multierror v1.1.1 // indirect
 	github.com/joeshaw/multierror v0.0.0-20140124173710-69b34d4ec901 // indirect
+	github.com/likexian/gokit v0.25.9 // indirect
 	github.com/mattn/go-colorable v0.1.9 // indirect
 	github.com/mattn/go-isatty v0.0.14 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
@@ -40,6 +44,7 @@ require (
 	golang.org/x/net v0.3.0 // indirect
 	golang.org/x/sync v0.0.0-20220601150217-0de741cfad7f // indirect
 	golang.org/x/term v0.3.0 // indirect
+	golang.org/x/text v0.5.0 // indirect
 	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
 	howett.net/plist v0.0.0-20181124034731-591f970eefbb // indirect
 )

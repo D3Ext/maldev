@@ -41,6 +41,35 @@ func main(){
 }
 ```
 
+## Send http post request with data
+
+```go
+package main
+
+import (
+  "fmt"
+  "log"
+  "net/url"
+
+  "github.com/D3Ext/maldev/network"
+)
+
+func main(){
+  data := url.Values{
+    "example": {"value1"},
+    "test": {"value2"},
+  }
+
+  timeout := 2000 // Request timeout in milliseconds, for default use network.DefaultTimeout
+  req, err := network.PostHttpReq("http://example.com/index.php", data, timeout)
+  if err != nil {
+    log.Fatal(err)
+  }
+
+  fmt.Println(req.StatusCode)
+}
+```
+
 ## List all network interfaces
 
 ```go
