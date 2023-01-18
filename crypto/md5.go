@@ -10,3 +10,12 @@ func Md5Hash(plaintext []byte) (string) {
   return hex.EncodeToString(hash[:])
 }
 
+func VerifyMd5(hash string, password string) (bool) {
+  passwd_hash := Md5Hash([]byte(password))
+  if hash == passwd_hash {
+    return true
+  } else {
+    return false
+  }
+}
+

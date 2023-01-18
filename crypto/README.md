@@ -251,6 +251,31 @@ func main() {
 }
 ```
 
+## Verifying hashes
+
+```go
+package main
+
+import (
+  "fmt"
+
+  "github.com/D3Ext/maldev/crypto"
+)
+
+func main(){
+  md5hash := crypto.Md5Hash([]byte("maldev"))
+  md5_check := crypto.VerifyMd5(md5hash, "maldev")
+  fmt.Println(md5_check)
+
+  sha1hash := crypto.Sha1Hash([]byte("maldev"))
+  sha1_check := crypto.VerifySha1(sha1hash, "maldev")
+  fmt.Println(sha1_check)
+
+  // Same syntax with other hashes
+  // .......
+}
+```
+
 ## Generate an IV
 
 ```go

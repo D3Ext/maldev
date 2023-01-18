@@ -6,12 +6,12 @@ import (
 )
 
 func EncryptFile(file string, psk string, iv []byte) (error) {
-  plaintext, err := ioutil.ReadFile(file)
+  plaintext, err := ioutil.ReadFile(file) // Read file content as bytes
 	if err != nil {
     return err
   }
 
-  enc_bytes, err := AESEncrypt(plaintext, iv, []byte(psk))
+  enc_bytes, err := AESEncrypt(plaintext, iv, []byte(psk)) // Encrypt bytes with AES function
   if err != nil {
     return err
   }
@@ -21,7 +21,7 @@ func EncryptFile(file string, psk string, iv []byte) (error) {
     return err
   }
 
-  _, err = f.WriteString(string(enc_bytes))
+  _, err = f.WriteString(string(enc_bytes)) // Write ciphertext to file (overwrite)
   if err != nil {
     return err
   }

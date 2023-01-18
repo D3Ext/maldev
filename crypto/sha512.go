@@ -10,4 +10,13 @@ func Sha512Hash(plaintext []byte) (string) {
   return hex.EncodeToString(hash[:])
 }
 
+func VerifySha512(hash string, password string) (bool) {
+  passwd_hash := Sha512Hash([]byte(password))
+  if hash == passwd_hash {
+    return true
+  } else {
+    return false
+  }
+}
+
 

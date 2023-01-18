@@ -65,6 +65,25 @@ func GetFileContent(src string) (string, error) {
   return string(byte_content), nil
 }
 
+func WriteContent(filename string, text string) (error) {
+  err := os.WriteFile(filename, []byte(text), 0644)
+
+  if err != nil {
+    return err
+  }
+
+  return nil
+}
+
+func Move(src string, dst string) (error) {
+  err := os.Rename(src, dst)
+  if err != nil {
+    return err
+  }
+
+  return nil
+}
+
 func Copy(src string, dst string) (error) { // Copy file or directory (recursive)
   check, err := IsFile(src)
   if err != nil {

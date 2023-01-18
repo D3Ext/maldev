@@ -12,7 +12,8 @@ import (
 )
 
 func main(){
-  check := scanning.CheckUrl("https://google.com", 1000) // func CheckUrl(url_to_check string, timeout int) (bool)
+  timeout := 1000 // Url timeout must be especified in milliseconds, however you can use "scanning.UrlTimeout" to use default timeout
+  check := scanning.CheckUrl("https://google.com", timeout) // func CheckUrl(url_to_check string, timeout int) (bool)
   fmt.Println(check)
 }
 ```
@@ -72,7 +73,8 @@ import (
 )
 
 func main(){
-  check, err := scanning.CheckIfUp("192.168.1.6")
+  timeout := 1200 // Timeout in milliseconds, you can use "scanning.PingTimeout" as a default timeout
+  check, err := scanning.CheckIfUp("192.168.1.6", timeout)
   if err != nil {
     log.Fatal(err)
   }
@@ -129,7 +131,7 @@ func main(){
 
 ## Get all subdomains of a domain
 
-- It uses some third-party APIs like crt.sh, AlienVault, HackerTarget
+- It uses some third-party APIs like crt.sh, AlienVault, HackerTarget (don't use domains from CTFs because they don't exist)
 
 ```go
 package main
@@ -146,6 +148,28 @@ func main(){
   if err != nil {
     log.Fatal(err)
   }
+}
+```
+
+## Whois (domain)
+
+```go
+package main
+
+import (
+  "fmt"
+  "log"
+
+  "github.com/D3Ext/maldev/scanning"
+)
+
+func main(){
+  data, err := scanning.WhoisDomain("google.com")
+  if err != nil {
+    log.Fatal(err)
+  }
+
+  fmt.Println(data.Domain)
 }
 ```
 
