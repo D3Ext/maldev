@@ -79,7 +79,6 @@ func main(){
 package main
 
 import (
-  "fmt"
   "log"
 
   "github.com/D3Ext/maldev/files"
@@ -93,5 +92,23 @@ func main(){
 }
 ```
 
+## Move a file or dir
+
+```go
+package main
+
+import (
+  "log"
+
+  "github.com/D3Ext/maldev/files"
+)
+
+func main(){
+  err := files.Move("/path/to/file.txt", "/path/to/destination/file.txt")
+  if err != nil {
+    log.Fatal(err)
+  }
+}
+```
 
 

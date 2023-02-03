@@ -244,10 +244,10 @@ import (
 func main() {
   example := []byte("maldev")
 
-  fmt.Println("Md5: " + crypto.Md5Hash(example))
-  fmt.Println("Sha1: " + crypto.Sha1Hash(example))
-  fmt.Println("Sha256: " + crypto.Sha256Hash(example))
-  fmt.Println("Sha512: " + crypto.Sha512Hash(example))
+  fmt.Println("Md5: " + crypto.Md5(example))
+  fmt.Println("Sha1: " + crypto.Sha1(example))
+  fmt.Println("Sha256: " + crypto.Sha256(example))
+  fmt.Println("Sha512: " + crypto.Sha512(example))
 }
 ```
 
@@ -263,11 +263,11 @@ import (
 )
 
 func main(){
-  md5hash := crypto.Md5Hash([]byte("maldev"))
+  md5hash := crypto.Md5([]byte("maldev"))
   md5_check := crypto.VerifyMd5(md5hash, "maldev")
   fmt.Println(md5_check)
 
-  sha1hash := crypto.Sha1Hash([]byte("maldev"))
+  sha1hash := crypto.Sha1([]byte("maldev"))
   sha1_check := crypto.VerifySha1(sha1hash, "maldev")
   fmt.Println(sha1_check)
 

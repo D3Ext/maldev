@@ -3,8 +3,8 @@ package misc
 /*
 
 References:
-https://gist.github.com/D3Ext/845bdc6a22bbdd50fe409d78b7d59b96
-https://rosettacode.org/wiki/De_Bruijn_sequences#Go
+https://www.calhoun.io/creating-random-strings-in-go/
+https://stackoverflow.com/questions/22892120/how-to-generate-a-random-string-of-a-fixed-length-in-go
 
 */
 

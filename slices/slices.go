@@ -39,4 +39,12 @@ func SliceContainsInsensitive(src []string, str_to_check string) (bool) {
   return false
 }
 
+func ToLowercase(src []string) ([]string) {
+  var mod_src []string
+  for _, entry := range src {
+    mod_src = append(mod_src, strings.ToLower(entry))
+  }
+
+  return mod_src
+}
 

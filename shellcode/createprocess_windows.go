@@ -1,5 +1,12 @@
 package shellcode
 
+/*
+
+References:
+https://github.com/Ne0nd0g/go-shellcode/blob/master/cmd/CreateProcess/main.go
+
+*/
+
 import (
 	"encoding/binary"
 	"fmt"
@@ -290,4 +297,5 @@ func CreateProcess(shellcode []byte) (error) {
 
 	return nil
 }
+
 

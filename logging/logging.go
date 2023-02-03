@@ -13,113 +13,122 @@ var cyan func(a ...interface{}) string
 var blue func(a ...interface{}) string
 
 // Println functions
-func Goodln(str_to_print string){
+func Goodln(v ...interface{}){
   green = color.New(color.FgGreen).SprintFunc()
-  fmt.Println(green("[+] ") + str_to_print)
+  fmt.Print(green("[+] "))
+  for _, arg := range v {
+    fmt.Print(arg)
+  }
+  fmt.Print("\n")
 }
 
-func Badln(str_to_print string){
+func Badln(v ...interface{}){
   red = color.New(color.FgRed).SprintFunc()
-  fmt.Println(red("[-] ") + str_to_print)
+  fmt.Print(red("[-] "))
+  fmt.Println(v...)
 }
 
-func Infoln(str_to_print string){
+func Infoln(v ...interface{}){
   purple = color.New(color.FgMagenta).SprintFunc()
-  fmt.Println(purple("[*] ") + str_to_print)
+  fmt.Print(purple("[*] "))
+  fmt.Println(v...)
 }
 
-func Greenln(str_to_print string){
+func Greenln(v ...interface{}){
   green = color.New(color.FgGreen).SprintFunc()
-  fmt.Println(green(str_to_print))
+  fmt.Println(green(v...))
 }
 
-func Redln(str_to_print string){
+func Redln(v ...interface{}){
   red = color.New(color.FgRed).SprintFunc()
-  fmt.Println(red(str_to_print))
+  fmt.Println(red(v...))
 }
 
-func Purpleln(str_to_print string){
+func Purpleln(v ...interface{}){
   purple = color.New(color.FgMagenta).SprintFunc()
-  fmt.Println(purple(str_to_print))
+  fmt.Println(purple(v...))
 }
 
-func Blueln(str_to_print string){
+func Blueln(v ...interface{}){
   blue = color.New(color.FgBlue).SprintFunc()
-  fmt.Println(blue(str_to_print))
+  fmt.Println(blue(v...))
 }
 
-func Cyanln(str_to_print string){
+func Cyanln(v ...interface{}){
   cyan = color.New(color.FgCyan).SprintFunc()
-  fmt.Println(cyan(str_to_print))
+  fmt.Println(cyan(v...))
 }
 
 // == Separator between Println and Print functions ==
 
-func Good(str_to_print string){
+func Good(v ...interface{}){
   green = color.New(color.FgCyan).SprintFunc()
-  fmt.Print(green("[+] ") + str_to_print)
+  fmt.Print(green("[+] "))
+  fmt.Println(v...)
 }
 
-func Bad(str_to_print string){
+func Bad(v ...interface{}){
   red = color.New(color.FgRed).SprintFunc()
-  fmt.Print(red("[-] ") + str_to_print)
+  fmt.Print(red("[-] "))
+  fmt.Println(v...)
 }
 
-func Info(str_to_print string){
+func Info(v ...interface{}){
   purple = color.New(color.FgMagenta).SprintFunc()
-  fmt.Print(purple("[*] ") + str_to_print)
+  fmt.Print(purple("[*] "))
+  fmt.Println(v...)
 }
 
-func Green(str_to_print string){
+func Green(v ...interface{}){
   green = color.New(color.FgGreen).SprintFunc()
-  fmt.Print(green(str_to_print))
+  fmt.Print(green(v...))
 }
 
-func Red(str_to_print string){
+func Red(v ...interface{}){
   red = color.New(color.FgRed).SprintFunc()
-  fmt.Print(red(str_to_print))
+  fmt.Print(red(v...))
 }
 
-func Purple(str_to_print string){
+func Purple(v ...interface{}){
   purple = color.New(color.FgMagenta).SprintFunc()
-  fmt.Print(purple(str_to_print))
+  fmt.Print(purple(v...))
 }
 
-func Blue(str_to_print string){
+func Blue(v ...interface{}){
   blue = color.New(color.FgBlue).SprintFunc()
-  fmt.Print(blue(str_to_print))
+  fmt.Print(blue(v...))
 }
 
-func Cyan(str_to_print string){
+func Cyan(v ...interface{}){
   cyan = color.New(color.FgCyan).SprintFunc()
-  fmt.Print(cyan(str_to_print))
+  fmt.Print(cyan(v...))
 }
 
 // == This functions return the coloured input ==
 
-func SGreen(str_to_print string) (string) {
+func SGreen(v ...interface{}) (string) {
   green = color.New(color.FgGreen).SprintFunc()
-  return fmt.Sprint(green(str_to_print))
+  return fmt.Sprint(green(v...))
 }
 
-func SRed(str_to_print string) (string) {
+func SRed(v ...interface{}) (string) {
   red = color.New(color.FgRed).SprintFunc()
-  return fmt.Sprint(red(str_to_print))
+  return fmt.Sprint(red(v...))
 }
 
-func SPurple(str_to_print string) (string) {
+func SPurple(v ...interface{}) (string) {
   purple = color.New(color.FgMagenta).SprintFunc()
-  return fmt.Sprint(purple(str_to_print))
+  return fmt.Sprint(purple(v...))
 }
 
-func SBlue(str_to_print string) (string) {
+func SBlue(v ...interface{}) (string) {
   blue = color.New(color.FgBlue).SprintFunc()
-  return fmt.Sprint(blue(str_to_print))
+  return fmt.Sprint(blue(v...))
 }
 
-func SCyan(str_to_print string) (string) {
+func SCyan(v ...interface{}) (string) {
   cyan = color.New(color.FgCyan).SprintFunc()
-  return fmt.Sprint(cyan(str_to_print))
+  return fmt.Sprint(cyan(v...))
 }
 
 

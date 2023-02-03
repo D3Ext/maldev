@@ -1,9 +1,11 @@
 package system
 
 import (
-  //"fmt"
   "os/user"
+
   "golang.org/x/sys/windows"
+  "golang.org/x/sys/windows/registry"
+  
   sysinfo "github.com/elastic/go-sysinfo"
   "github.com/fourcorelabs/wintoken"
 )
@@ -30,6 +32,21 @@ type SystemInfo struct {
   ComputerId    string
   Container     bool
   Memory        MemInfo
+}
+
+func GetWinName() (string, error) {
+  key, err := registry.OpenKey(registry.LOCAL_MACHINE, `SOFTWARE\Microsoft\Windows NT\CurrentVersion`, registry.QUERY_VALUE)
+  if err != nil {
+    return "", err
+  }
+  defer key.Close()
+
+  product_name, _, err := key.GetStringValue("ProductName")
+  if err != nil {
+    return "", err
+  }
+
+  return product_name, nil
 }
 
 func GetUserPrivs() (bool, error) { // Function to check if current user has Administrator privileges

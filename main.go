@@ -28,7 +28,7 @@ import (
 func main(){
   logging.PrintBanner("Maldev")
   fmt.Println("\nFile \"example.txt\" exists?:", files.Exists("example.txt"))
-  fmt.Println("Md5 encrypted \"maldev\": " + crypto.Md5Hash([]byte("maldev")))
+  fmt.Println("Md5 encrypted \"maldev\": " + crypto.Md5([]byte("maldev")))
   fmt.Println("\"id\" command output: " + exec.ExecuteCommand("id"))
   fmt.Println("Random string of length 12: " + misc.RandomString(12))
   fmt.Println("Internet connection?:", network.CheckInternet())

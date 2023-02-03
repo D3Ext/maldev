@@ -24,7 +24,7 @@ type WindowsProcess struct { // Windows process structure
   Exe             string  // Cmdline executable (e.g. explorer.exe)
 }
 
-func GetPidByNameWin(name string) ([]int, error) { // Return all PIDs of a binary
+func FindPidByName(name string) ([]int, error) { // Return all PIDs of a binary
   var pids_to_return []int
   all_processes, err := GetWinProcesses()
   if err != nil {
@@ -39,7 +39,7 @@ func GetPidByNameWin(name string) ([]int, error) { // Return all PIDs of a binar
   return pids_to_return, nil
 }
 
-func GetNameByPidWin(pid int) (string, error) { // Return process name (.exe) of a specific PID
+func FindNameByPid(pid int) (string, error) { // Return process name (.exe) of a specific PID
   all_processes, err := GetWinProcesses()
   if err != nil {
     return "", err
@@ -53,7 +53,7 @@ func GetNameByPidWin(pid int) (string, error) { // Return process name (.exe) of
   return "", errors.New("PID not found")
 }
 
-func GetWinProcesses() ([]WindowsProcess, error) { // Get all processes using native windows API
+func GetProcesses() ([]WindowsProcess, error) { // Get all processes using native windows API
   handle, err := windows.CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0)
   if err != nil {
     return nil, err
@@ -81,7 +81,9 @@ func GetWinProcesses() ([]WindowsProcess, error) { // Get all processes using na
   }
 }
 
-func NewWindowsProcess(e *windows.ProcessEntry32) WindowsProcess { // Auxiliar function (don't use it)
+// Auxiliary function
+
+func NewWindowsProcess(e *windows.ProcessEntry32) WindowsProcess {
   end := 0
   for {
     if e.ExeFile[end] == 0 {

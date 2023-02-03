@@ -4,7 +4,7 @@ import (
   "os/user"
 )
 
-func GetGroupNames() ([]string, error) {
+func GetGroups() ([]string, error) {
   var groups_to_return []string // This variable handle group names (e.g. sys, root, admin...)
 
   current_user, err := user.Current() // Get atributes from current session

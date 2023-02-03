@@ -23,6 +23,15 @@ import (
   "errors"
 )
 
+type CustomInterface struct {
+  Index         int
+  MTU           int
+  Name          string
+  HardwareAddr  net.HardwareAddr
+  Flags         net.Flags
+  Addrs         []string
+}
+
 func ListAllInterfaces() ([]string, error) {
   interfaces, err := net.Interfaces()
   if err != nil {
@@ -36,31 +45,61 @@ func ListAllInterfaces() ([]string, error) {
   return interface_names, nil
 }
 
-func GetInterfaceInfo(interface_name string) (net.Interface, error) {
+func GetInterfaceInfo(interface_name string) (CustomInterface, error) {
   interfaces, err := net.Interfaces()
   if err != nil {
-    return interfaces[0], err
+    return CustomInterface{}, err
   }
 
   for _, inter := range interfaces {
     if interface_name == inter.Name {
-      return inter, nil
+
+      var interface_addrs []string
+      all_addrs, _ := inter.Addrs()
+      for _, p := range all_addrs {
+        interface_addrs = append(interface_addrs, p.String())
+      }
+
+      return CustomInterface{
+        Index: inter.Index,
+        MTU: inter.MTU,
+        Name: inter.Name,
+        HardwareAddr: inter.HardwareAddr,
+        Flags: inter.Flags,
+        Addrs: interface_addrs,
+      }, nil
     }
   }
-  return interfaces[0], errors.New("ERROR: interface not found!")
+
+  return CustomInterface{}, errors.New("ERROR: interface not found!")
 }
 
-func FormatInfo(interface_info net.Interface) (string) {
-  var interfaces_out string
-  interfaces_out += fmt.Sprintf("Index  : %v\n", interface_info.Index) // Simple information display
-  interfaces_out += fmt.Sprintf("Name   : %v\n", interface_info.Name)
-  interfaces_out += fmt.Sprintf("HWaddr : %v\n", interface_info.HardwareAddr)
-  interfaces_out += fmt.Sprintf("MTU    : %v\n", interface_info.MTU)
-  interfaces_out += fmt.Sprintf("Flags  : %v\n", interface_info.Flags)
+func (i CustomInterface) GetMac() (string) {
+  return i.HardwareAddr.String()
+}
 
-  addrs, _ := interface_info.Addrs()
-  for _, ipaddr := range addrs { // Loop because may have more than one address
-    interfaces_out += fmt.Sprintf("Addr   : %v\n", ipaddr)
+func (i CustomInterface) GetFlags() (net.Flags) {
+  return i.Flags
+}
+
+func (i CustomInterface) GetName() (string) {
+  return i.Name
+}
+
+func (i CustomInterface) GetMtu() (int) {
+  return i.MTU
+}
+
+func (i CustomInterface) Format() (string) {
+  var interfaces_out string
+  interfaces_out += fmt.Sprintf("Index  : %v\n", i.Index) // Simple information display
+  interfaces_out += fmt.Sprintf("Name   : %v\n", i.Name)
+  interfaces_out += fmt.Sprintf("HWaddr : %v\n", i.HardwareAddr)
+  interfaces_out += fmt.Sprintf("MTU    : %v\n", i.MTU)
+  interfaces_out += fmt.Sprintf("Flags  : %v\n", i.Flags)
+
+  for _, ipaddr := range i.Addrs { // Loop because may have more than one address
+    interfaces_out += fmt.Sprintf("Addrs  : %v\n", ipaddr)
   }
   interfaces_out = strings.TrimSuffix(interfaces_out, "\n") // Remove trailing line
 

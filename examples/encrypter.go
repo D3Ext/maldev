@@ -10,10 +10,10 @@ import (
   "crypto/aes"
 
   // Maldev packages
+  s "github.com/D3Ext/maldev/shellcode"
   "github.com/D3Ext/maldev/crypto"
   "github.com/D3Ext/maldev/files"
   l "github.com/D3Ext/maldev/logging"
-  //"github.com/D3Ext/maldev/files"
 )
 
 func main(){
@@ -33,12 +33,10 @@ func main(){
     os.Exit(0) // Exit
   }
   
-  //raw_shellcode, err := shellcode.GetShellcodeFromFile(os.Args[2]) // Get shellcode as bytes from input file
-  str_shellcode, err := files.GetFileContent(os.Args[2])
+  raw_shellcode, err := s.GetShellcodeFromFile(os.Args[2]) // Get shellcode as bytes from input file
   if err != nil { // Handle error
     log.Fatal(err)
   }
-  raw_shellcode := []byte(str_shellcode)
 
   l.Goodln("Shellcode obtained from file") // Some status info
   time.Sleep(300 * time.Millisecond) // Little sleep to let user read stdout

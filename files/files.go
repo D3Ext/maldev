@@ -56,7 +56,7 @@ func IsDir(src string) (bool, error) { // Check if especified path is a director
   }
 }
 
-func GetFileContent(src string) (string, error) {
+func GetContent(src string) (string, error) {
   byte_content, err := ioutil.ReadFile(src)
   if err != nil {
     return "", err

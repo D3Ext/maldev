@@ -44,3 +44,17 @@ func GetShellcodeFromFile(file string) ([]byte, error) { // Read given file and 
   return shellcode_bytes, nil
 }
 
+func WriteShellcodeToFile(filename string, shellcode []byte) (error) {
+  f, err := os.Create(filename)
+  if err != nil {
+    return err
+  }
+  defer f.Close()
+
+  _, err = f.Write(shellcode)
+  if err != nil {
+    return err
+  }
+
+  return nil
+}
