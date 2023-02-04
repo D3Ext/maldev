@@ -14,7 +14,7 @@
 
 # Introduction
 
-`maldev` aims to help malware developers, red teamers and anyone who is interested in cybersecurity. It uses native Golang code at 100% and it tries to do all operations from scratch without any third-party package. The project isn't finished yet and the API may be unstable so your malware may break in a near future.
+`maldev` aims to help malware developers, red teamers and anyone who is interested in cybersecurity. It uses native Golang code and it tries to do all operations from scratch without (almost) any third-party package. The project isn't finished yet and the API may be unstable so your malware may break in a near future.
 
 # Features
 
