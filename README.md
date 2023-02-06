@@ -1,6 +1,6 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/D3Ext/maldev/main/assets/gopher-rasta.png" width="130" heigth="60" alt="Gopher"/>
-  <h1 align="center">Maldev</h1></br>
+  <h1 align="center">Maldev</h1>
 </p>
 
 <p align="center">
@@ -14,7 +14,7 @@
 
 # Introduction
 
-`maldev` aims to help malware developers, red teamers and anyone who is interested in cybersecurity. It uses native Golang code and it tries to do all operations from scratch without (almost) any third-party package. The project isn't finished yet and the API may be unstable so your malware may break in a near future.
+`maldev` aims to help malware developers, red teamers and anyone who is interested in cybersecurity. It uses native Golang code and it tries to do all operations from scratch without (almost) any third-party package. The project isn't finished yet and the API may be unstable so your malware may break in a near future, sorry about this.
 
 # Features
 
@@ -56,6 +56,11 @@ This are the different categories:
   - Get shellcode from url
   - Write shellcode to file
   - Convert DLL to shellcode
+- [Red Team](https://github.com/D3Ext/maldev/tree/main/redteam)
+  - 3 different ways to dump system hashes
+  - Steal token from PID (Impersonation)
+  - Enable/disable Sticky Keys backdoor
+  - Create malicious SCF on given path
 - [Antiforensics](https://github.com/D3Ext/maldev/tree/main/antiforensics)
   - Wiping
   - Timestomping
@@ -63,6 +68,11 @@ This are the different categories:
   - List all process
   - Get process name by PID
   - Get list of processes by name
+- [Exec](https://github.com/D3Ext/maldev/tree/main/exec)
+  - Execute bash commands
+  - Execute powershell commands
+  - Execute cmd commands
+  - Execute command with Token
 - [System](https://github.com/D3Ext/maldev/tree/main/system)
   - Whoami
   - Get current dir
@@ -104,7 +114,7 @@ This are the different categories:
 
 # Installation
 
-Just execute this and it should be installed without problems
+Just execute this and it should be installed without problems:
 
 ```sh
 go get -u https://github.com/D3Ext/maldev
@@ -122,7 +132,13 @@ In every directory there is a **README.md** which contains at least one example 
 
 :ballot_box_with_check: Wappalyzer web fingerprinting
 
+:black_square_button: Publish official package documentation (pkg.go.dev)
+
 :ballot_box_with_check: Convert DLL to independent shellcode
+
+:black_square_button: Sandbox detection and more
+
+:black_square_button: Stable progress bars
 
 :ballot_box_with_check: Wrapper functions of "fmt" and "log" packages
 
@@ -152,7 +168,7 @@ As said above I have tried to implement all functions from scratch but I have al
 
 [wintoken](https://github.com/fourcorelabs/wintoken) used to interact with Windows API and getting privileges info
 
-[EDRHunt](https://github.com/FourCoreLabs/EDRHunt) used in "system" part to look for installed AVs/EDRs
+[EDRHunt](https://github.com/FourCoreLabs/EDRHunt) used in `system/` to look for installed AVs/EDRs
 
 [go-figure](https://github.com/common-nighthawk/go-figure) to create banners easily
 
