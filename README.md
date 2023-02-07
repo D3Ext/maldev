@@ -1,5 +1,5 @@
 <p align="center">
-  <h1 align="center">Maldev</h1></br>
+  <h1 align="center">Maldev</h1>
 </p>
 
 <p align="center">
@@ -126,6 +126,8 @@ In every directory there is a **README.md** which contains at least one example 
 :ballot_box_with_check: Wrapper functions of "fmt" and "log" packages
 
 :ballot_box_with_check: Whois functions
+
+:black_square_button: Sandbox detecting functions and more
 
 :black_square_button: Shikata Ga Nai polymorphic encoder
 
