@@ -1,6 +1,6 @@
 # Antiforensics Examples
 
-## Wipe a file
+## Wipe a file or dir (recursive)
 
 ```go
 package main
@@ -12,7 +12,7 @@ import (
 )
 
 func main(){
-  err = antiforensics.WipeFile("./file.txt")
+  err = antiforensics.Wipe("file.txt")
   if err != nil {
     log.Fatal(err)
   }
@@ -31,7 +31,7 @@ import (
 )
 
 func main(){
-  err := antiforensics.TimestompFile("./file.txt", 5) // func TimestompFile(filename string, count int) (error)
+  err := antiforensics.Timestomp("./file.txt", 5) // func TimestompFile(filename string, count int) (error)
   if err != nil {
     log.Fatal(err)
   }
