@@ -1,6 +1,6 @@
 # Process Examples
 
-- Every function is different for Linux or Windows
+- This package provides some easy-to-use functions to work with processes. Supported for Linux and Windows
 
 ## List all processes
 
@@ -15,20 +15,11 @@ import (
 )
 
 func main(){
-  // Linux
-  p, err := processes.GetLinuxProcesses()
+  p, err := processes.GetProcesses() // func GetProcesses() ([]ps.Process, error)
   if err != nil {
     log.Fatal(err)
   }
   fmt.Println(p)
-
-  // Windows
-  p2, err := process.GetWinProcesses()
-  if err != nil {
-    log.Fatal(err)
-  }
-
-  fmt.Println(p2)
 }
 ```
 
@@ -45,20 +36,11 @@ import (
 )
 
 func main(){
-  // Linux
-  process_name, err := processes.GetNameByPidLin(1234)
+  process_name, err := processes.FindNameByPid(1234) // func FindNameByPid(pid int) (string, error)
   if err != nil {
     log.Fatal(err)
   }
   fmt.Println(process_name)
-
-  // Windows
-  process_name2, err := process.GetNameByPidWin(1234)
-  if err != nil {
-    log.Fatal(err)
-  }
-
-  fmt.Println(process_name2)
 }
 
 ```
@@ -76,20 +58,11 @@ import (
 )
 
 func main(){
-  // Linux
-  pids, err := process.GetPidByNameLin("firefox")
+  pids, err := process.FindPidByName("firefox") // func FindPidByName(name string) ([]int, error)
   if err != nil {
     log.Fatal(err)
   }
   fmt.Println(pids)
-
-  // Windows
-  pids2, err := process.GetPidByNameWin("firefox.exe")
-  if err != nil {
-    log.Fatal(err)
-  }
-
-  fmt.Println(pids2)
 }
 ```
 

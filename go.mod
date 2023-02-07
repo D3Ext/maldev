@@ -26,6 +26,7 @@ require (
 
 require (
 	github.com/Binject/debug v0.0.0-20200830173345-f54480b6530f // indirect
+	github.com/VirusTotal/vt-go v0.0.0-20230116080936-b3d5f29df3c3 // indirect
 	github.com/awgh/rawreader v0.0.0-20200626064944-56820a9c6da4 // indirect
 	github.com/bi-zone/go-fileversion v1.0.0 // indirect
 	github.com/decred/dcrd/dcrec/secp256k1/v4 v4.0.1 // indirect
@@ -37,12 +38,16 @@ require (
 	github.com/hashicorp/go-multierror v1.1.1 // indirect
 	github.com/hirochachacha/go-smb2 v1.1.0 // indirect
 	github.com/joeshaw/multierror v0.0.0-20140124173710-69b34d4ec901 // indirect
+	github.com/lemon-mint/wipe-file-go v1.1.2 // indirect
 	github.com/likexian/gokit v0.25.9 // indirect
 	github.com/mattn/go-colorable v0.1.9 // indirect
 	github.com/mattn/go-isatty v0.0.14 // indirect
+	github.com/micropkg/LicenseInjector v1.0.0 // indirect
+	github.com/micropkg/gstore v1.0.0 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/projectdiscovery/wappalyzergo v0.0.79 // indirect
 	github.com/prometheus/procfs v0.8.0 // indirect
+	github.com/thedevsaddam/gojsonq/v2 v2.5.2 // indirect
 	github.com/yusufpapurcu/wmi v1.2.2 // indirect
 	golang.org/x/net v0.3.0 // indirect
 	golang.org/x/sync v0.0.0-20220601150217-0de741cfad7f // indirect

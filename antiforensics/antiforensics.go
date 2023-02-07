@@ -13,15 +13,109 @@ import (
   "math"
   "io"
   "time"
+  "strings"
   "path/filepath"
   "encoding/base32"
   mrand "math/rand"
   "crypto/rand"
+
+  files "github.com/D3Ext/maldev/files"
 )
 
 const blockSize = 1024 * 1024
 
-func WipeFile(filename string) error {
+
+func Wipe(src string) (error) { // Works recursively to delete folders
+  src = strings.TrimSuffix(src, "/")
+
+  check, err := files.IsFile(src)
+  if err != nil {
+    return err
+  }
+
+  if (check == true) {
+    err = wipeFile(src)
+    if err != nil {
+      return err
+    }
+
+  } else if (check == false) {
+    directory, err := os.Open(src)
+    if err != nil {
+      return err
+    }
+
+    objects, err := directory.Readdir(-1)
+    if err != nil {
+      return err
+    }
+
+    for _, obj := range objects {
+      if obj.IsDir() {
+        err := Wipe(src + "/" + obj.Name())
+        if err != nil {
+          return err
+        }
+      } else {
+        err := wipeFile(src + "/" + obj.Name())
+        if err != nil {
+          return err
+        }
+      }
+    }
+
+    err = os.Remove(src)
+    if err != nil {
+      return err
+    }
+  }
+
+  return nil
+}
+
+
+func Timestomp(src string, count int) (error) {
+  src = strings.TrimSuffix(src, "/")
+  check, err := files.IsFile(src)
+  if err != nil {
+    return err
+  }
+
+  if (check == true) {
+    err = timestompFile(src, count)
+    if err != nil {
+      return err
+    }
+  } else if (check == false) {
+    directory, err := os.Open(src)
+    if err != nil {
+      return err
+    }
+
+    objects, err := directory.Readdir(-1)
+    if err != nil {
+      return err
+    }
+
+    for _, obj := range objects {
+      if obj.IsDir() {
+        err := Timestomp(src + "/" + obj.Name(), count)
+        if err != nil {
+          return err
+        }
+      } else {
+        err := timestompFile(src + "/" + obj.Name(), count)
+        if err != nil {
+          return err
+        }
+      }
+    }
+  }
+
+  return nil
+}
+
+func wipeFile(filename string) (error) {
   randbuf := make([]byte, blockSize)
   f, err := os.OpenFile(filename, os.O_RDWR, 0666)
   if err != nil {
@@ -33,10 +127,10 @@ func WipeFile(filename string) error {
   }
 	
   size := stat.Size()
-	blockCount := int(math.Ceil(float64(size)/blockSize)) + 1
+	blockCount := int(math.Ceil(float64(size) / blockSize)) + 1
 	for pass := 0; pass < 3; pass++ {
 		for i := 0; i < blockCount; i++ {
-			f.WriteAt(randbuf, int64(i*blockSize))
+			f.WriteAt(randbuf, int64(i * blockSize))
 			if pass != 0 {
 				io.ReadFull(rand.Reader, randbuf)
 			}
@@ -49,7 +143,7 @@ func WipeFile(filename string) error {
   dir, _ := filepath.Split(filename)
 	newname := filepath.Join(dir, randb32(max(len(filename), 20)))
 	
-  for i := 0; i < 10; i++ {
+  for i := 0; i < 3; i++ {
 		os.Rename(filename, newname)
     filename = newname
     newname = filepath.Join(dir, randb32(max(len(filename), 20)))
@@ -58,7 +152,7 @@ func WipeFile(filename string) error {
 	return os.Remove(filename)
 }
 
-func TimestompFile(filename string, count int) error {
+func timestompFile(filename string, count int) error {
   for i := 0; i < count; i++ {
     err := os.Chtimes(filename, time.Unix(mrand.Int63n(time.Now().Unix()), 0), time.Unix(mrand.Int63n(time.Now().Unix()), 0))
     if err != nil {

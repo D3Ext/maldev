@@ -26,7 +26,7 @@ type WindowsProcess struct { // Windows process structure
 
 func FindPidByName(name string) ([]int, error) { // Return all PIDs of a binary
   var pids_to_return []int
-  all_processes, err := GetWinProcesses()
+  all_processes, err := GetProcesses()
   if err != nil {
     return pids_to_return, err
   }
@@ -40,7 +40,7 @@ func FindPidByName(name string) ([]int, error) { // Return all PIDs of a binary
 }
 
 func FindNameByPid(pid int) (string, error) { // Return process name (.exe) of a specific PID
-  all_processes, err := GetWinProcesses()
+  all_processes, err := GetProcesses()
   if err != nil {
     return "", err
   }
