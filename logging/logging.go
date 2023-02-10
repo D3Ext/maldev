@@ -1,7 +1,16 @@
 package logging
 
+/*
+
+References:
+https://github.com/fatih/color
+
+*/
+
 import (
   "fmt"
+  "runtime"
+
   "github.com/fatih/color"
 )
 
@@ -14,24 +23,39 @@ var blue func(a ...interface{}) string
 
 // Println functions
 func Goodln(v ...interface{}){
-  green = color.New(color.FgGreen).SprintFunc()
-  fmt.Print(green("[+] "))
-  for _, arg := range v {
-    fmt.Print(arg)
+  if runtime.GOOS == "linux" {
+    green = color.New(color.FgGreen).SprintFunc()
+    fmt.Print(green("[+] "))
+    fmt.Println(v...)
+  } else {
+    fmt.Print("[+] ")
+    for _, arg := range v {
+      fmt.Print(arg)
+    }
+    fmt.Print("\n")
   }
-  fmt.Print("\n")
 }
 
 func Badln(v ...interface{}){
-  red = color.New(color.FgRed).SprintFunc()
-  fmt.Print(red("[-] "))
-  fmt.Println(v...)
+  if runtime.GOOS == "linux" {
+    red = color.New(color.FgRed).SprintFunc()
+    fmt.Print(red("[-] "))
+    fmt.Println(v...)
+  } else {
+    fmt.Print("[-] ")
+    fmt.Println(v...)
+  }
 }
 
 func Infoln(v ...interface{}){
-  purple = color.New(color.FgMagenta).SprintFunc()
-  fmt.Print(purple("[*] "))
-  fmt.Println(v...)
+  if runtime.GOOS == "linux" {
+    purple = color.New(color.FgMagenta).SprintFunc()
+    fmt.Print(purple("[*] "))
+    fmt.Println(v...)
+  } else {
+    fmt.Print("[*] ")
+    fmt.Println(v...)
+  }
 }
 
 func Greenln(v ...interface{}){
@@ -62,21 +86,36 @@ func Cyanln(v ...interface{}){
 // == Separator between Println and Print functions ==
 
 func Good(v ...interface{}){
-  green = color.New(color.FgCyan).SprintFunc()
-  fmt.Print(green("[+] "))
-  fmt.Println(v...)
+  if runtime.GOOS == "linux" {
+    green = color.New(color.FgCyan).SprintFunc()
+    fmt.Print(green("[+] "))
+    fmt.Println(v...)
+  } else {
+    fmt.Print("[+] ")
+    fmt.Println(v...)
+  }
 }
 
 func Bad(v ...interface{}){
-  red = color.New(color.FgRed).SprintFunc()
-  fmt.Print(red("[-] "))
-  fmt.Println(v...)
+  if runtime.GOOS == "linux" {
+    red = color.New(color.FgRed).SprintFunc()
+    fmt.Print(red("[-] "))
+    fmt.Println(v...)
+  } else {
+    fmt.Print("[-] ")
+    fmt.Println(v...)
+  }
 }
 
 func Info(v ...interface{}){
-  purple = color.New(color.FgMagenta).SprintFunc()
-  fmt.Print(purple("[*] "))
-  fmt.Println(v...)
+  if runtime.GOOS == "linux" {
+    purple = color.New(color.FgMagenta).SprintFunc()
+    fmt.Print(purple("[*] "))
+    fmt.Println(v...)
+  } else {
+    fmt.Print("[*] ")
+    fmt.Println(v...)
+  }
 }
 
 func Green(v ...interface{}){

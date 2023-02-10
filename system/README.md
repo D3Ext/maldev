@@ -1,6 +1,6 @@
 # System Examples
 
-- This package provides some functions which can be really useful during system reconeissance or whatever you want
+- This package provides some functions which can be really useful during system reconnaissance or whatever you want
 
 ## General info
 
@@ -42,6 +42,14 @@ func main(){
 
   uptime := system.Uptime() // Only for windows
   fmt.Println(uptime)
+
+  sid, err := system.GetSid() // Returns user SID
+  // handle error
+  fmt.Println(sid)
+
+  rid, err := system.GetRid() // Returns RID
+  // handle error
+  fmt.Println(rid)
 }
 ```
 
