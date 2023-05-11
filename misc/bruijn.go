@@ -15,7 +15,7 @@ import (
 
 const characters string = "abcdefABCDEF123"
 
-func DeBruijn(n int) (string) {
+func deBruijn(n int) (string) {
   var k int = 15
   alphabet := characters[0:k]
 
@@ -50,10 +50,10 @@ func DeBruijn(n int) (string) {
 }
 
 func GeneratePattern(length int) (string) {
-  return DeBruijn(4)[0:length]
+  return deBruijn(4)[0:length]
 }
 
 func GetPatternOffset(pattern_str string) (int) {
-  original_pattern := DeBruijn(4)
+  original_pattern := deBruijn(4)
   return len(strings.Split(original_pattern, pattern_str)[0]) // Split original cyclic pattern so 0 position is the number of characters to return
 }

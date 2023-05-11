@@ -69,7 +69,7 @@ func GetProcesses() ([]WindowsProcess, error) { // Get all processes using nativ
 
   results := make([]WindowsProcess, 0, 50)
   for {
-    results = append(results, NewWindowsProcess(&entry))
+    results = append(results, newWindowsProcess(&entry))
 
     err = windows.Process32Next(handle, &entry)
     if err != nil {
@@ -83,7 +83,7 @@ func GetProcesses() ([]WindowsProcess, error) { // Get all processes using nativ
 
 // Auxiliary function
 
-func NewWindowsProcess(e *windows.ProcessEntry32) WindowsProcess {
+func newWindowsProcess(e *windows.ProcessEntry32) WindowsProcess {
   end := 0
   for {
     if e.ExeFile[end] == 0 {

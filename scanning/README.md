@@ -1,5 +1,51 @@
 # Scanning Examples
 
+This section contains some useful funtions which can be used during recon
+
+## Get all subdomains of a domain
+
+- It uses some third-party APIs like crt.sh, AlienVault, HackerTarget (don't use domains from CTFs because they don't exist)
+
+```go
+package main
+
+import (
+  "fmt"
+  "log"
+
+  "github.com/D3Ext/maldev/scanning"
+)
+
+func main(){
+  subdoms, err := scanning.GetAllSubdomains("hackthebox.com") // func GetAllSubdomains(dom string) ([]string, error)
+  if err != nil {
+    log.Fatal(err)
+  }
+}
+```
+
+## Whois (domain)
+
+```go
+package main
+
+import (
+  "fmt"
+  "log"
+
+  "github.com/D3Ext/maldev/scanning"
+)
+
+func main(){
+  data, err := scanning.WhoisDomain("google.com")
+  if err != nil {
+    log.Fatal(err)
+  }
+
+  fmt.Println(data.Domain)
+}
+```
+
 ## Check if URL is up
 
 ```go
@@ -129,49 +175,6 @@ func main(){
 }
 ```
 
-## Get all subdomains of a domain
-
-- It uses some third-party APIs like crt.sh, AlienVault, HackerTarget (don't use domains from CTFs because they don't exist)
-
-```go
-package main
-
-import (
-  "fmt"
-  "log"
-
-  "github.com/D3Ext/maldev/scanning"
-)
-
-func main(){
-  subdoms, err := scanning.GetAllSubdomains("hackthebox.com") // func GetAllSubdomains(dom string) ([]string, error)
-  if err != nil {
-    log.Fatal(err)
-  }
-}
-```
-
-## Whois (domain)
-
-```go
-package main
-
-import (
-  "fmt"
-  "log"
-
-  "github.com/D3Ext/maldev/scanning"
-)
-
-func main(){
-  data, err := scanning.WhoisDomain("google.com")
-  if err != nil {
-    log.Fatal(err)
-  }
-
-  fmt.Println(data.Domain)
-}
-```
 
 
 

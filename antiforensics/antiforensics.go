@@ -24,7 +24,6 @@ import (
 
 const blockSize = 1024 * 1024
 
-
 func Wipe(src string) (error) { // Works recursively to delete folders
   src = strings.TrimSuffix(src, "/")
 

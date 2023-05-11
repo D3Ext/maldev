@@ -1,8 +1,6 @@
 package redteam
 
 import (
-  //"syscall"
-
   "golang.org/x/sys/windows"
   "github.com/fourcorelabs/wintoken"
 )

@@ -14,7 +14,7 @@
 
 # Introduction
 
-`maldev` aims to help malware developers, red teamers and anyone who is interested in cybersecurity. It uses native Golang code and it tries to do all operations from scratch without (almost) any third-party package. The project isn't finished yet and the API may be unstable so your malware may break in a near future, sorry about this.
+`maldev` aims to help malware developers, red teamers and anyone who is interested in cybersecurity. It uses native Golang code and some other useful packages like [Hooka](https://github.com/D3Ext/Hooka) which I created to perform complex low-level red teaming stuff. The project isn't finished yet and the API may be unstable so your code may break in a future, sorry about this. Anyway if you find a bug feel free to open an issue or create a pull-request which fixes it
 
 # Features
 
@@ -51,11 +51,11 @@ This are the different categories:
   - Convert epoch to dates
   - Convert text to leet
 - [Shellcode](https://github.com/D3Ext/maldev/tree/main/shellcode)
-  - Process Injection techniques
-  - Get shellcode from file
-  - Get shellcode from url
+  - Tons of shellcode injection techniques
+  - Retrieve shellcode from file
+  - Retrieve shellcode from url
   - Write shellcode to file
-  - Convert DLL to shellcode
+  - Convert DLL to shellcode (***sRDI***)
 - [Red Team](https://github.com/D3Ext/maldev/tree/main/redteam)
   - 3 different ways to dump system hashes
   - Steal token from PID (Impersonation)
@@ -67,7 +67,7 @@ This are the different categories:
 - [Processes](https://github.com/D3Ext/maldev/tree/main/process)
   - List all process
   - Get process name by PID
-  - Get list of processes by name
+  - Get list of processes by name (i.e. firefox.exe)
 - [Exec](https://github.com/D3Ext/maldev/tree/main/exec)
   - Execute bash commands
   - Execute powershell commands
@@ -120,35 +120,36 @@ Just execute this and it should be installed without problems:
 go get -u https://github.com/D3Ext/maldev
 ```
 
+# Usage
+
+To import all the functions at the same time do it like this:
+
+```go
+import (
+    maldev "github.com/D3Ext/maldev/all"
+)
+```
+
+Anyway if you want to use functions from an especific topic, you can do it like this:
+
+> Example with cryptography
+```go
+import "github.com/D3Ext/maldev/crypto"
+```
+
 # Examples
 
-In every directory there is a **README.md** which contains at least one example of every defined function, if you don't have enough creativity I encourage you to check out the `examples/` directory where I've developed some good examples which use ***maldev*** functions
+In every directory there is a **README.md** which contains at least one example of every defined function, if you don't have enough creativity I encourage you to check out the `examples/` directory where I've developed some good examples which use ***maldev*** functions like a simple ransomware, a shellcode loader and much more
 
 # TODO
 
 :black_square_button: Kerberos protocol implementation
 
-:ballot_box_with_check: Windows hashes dump
-
-:ballot_box_with_check: Wappalyzer web fingerprinting
-
 :black_square_button: Publish official package documentation (pkg.go.dev)
-
-:ballot_box_with_check: Convert DLL to independent shellcode
-
-:black_square_button: Sandbox detection and more
 
 :black_square_button: Stable progress bars
 
-:ballot_box_with_check: Wrapper functions of "fmt" and "log" packages
-
-:ballot_box_with_check: Whois functions
-
 :black_square_button: Shikata Ga Nai polymorphic encoder
-
-:ballot_box_with_check: Windows token impersonation
-
-:black_square_button: More system enumeration functions
 
 # Third party
 

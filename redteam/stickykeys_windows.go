@@ -1,12 +1,5 @@
 package redteam
 
-/*
-
-References:
-https://book.hacktricks.xyz/hardware-physical-access/physical-attacks
-
-*/
-
 import (
   "os"
   "errors"

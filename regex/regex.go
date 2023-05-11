@@ -2,7 +2,6 @@ package regex
 
 import (
   "regexp"
-  //"fmt"
   "strings"
 )
 
