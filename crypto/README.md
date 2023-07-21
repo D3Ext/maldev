@@ -114,6 +114,40 @@ func main() {
 }
 ```
 
+## ChaCha20
+
+```go
+package main
+
+import (
+  "fmt"
+  "log"
+  "github.com/D3Ext/maldev/crypto"
+)
+
+func main(){
+  data := []byte("this is an example")
+  psk := []byte("ThisIsMySuperSecret32Password123")
+
+  fmt.Println("Data:", string(data))
+  fmt.Println("Key:", psk)
+
+  ciphertext, err := crypto.Chacha20Encrypt(data, psk) // Encrypt
+  if err != nil {
+    log.Fatal(err)
+  }
+
+  fmt.Println("Ciphertext:", ciphertext)
+
+  decoded, err := crypto.Chacha20Decrypt(ciphertext, psk) // Decrypt
+  if err != nil {
+    log.Fatal(err)
+  }
+
+  fmt.Println("Decoded:", string(decoded))
+}
+```
+
 ## Elliptic Curve
 
 - Encryption and decryption example

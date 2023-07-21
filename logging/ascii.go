@@ -25,7 +25,7 @@ func GetBanner(str_to_convert string) (string) { // Create ascii banner and retu
   return new_banner_str
 }
 
-func PrintBanner(str_to_convert string){ // Directly create banner and print to stdout
+func PrintBanner(str_to_convert string) { // Directly create banner and print to stdout
   new_banner := figure.NewFigure(str_to_convert, "", true)
   new_banner.Print()
 }

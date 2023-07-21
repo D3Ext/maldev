@@ -34,6 +34,7 @@ This are the different categories:
   - Rot47
   - Bcrypt
   - Elliptic Curve
+  - ChaCha20
   - Compare hashes
 - [Network](https://github.com/D3Ext/maldev/tree/main/network)
   - List all interfaces
@@ -175,34 +176,19 @@ As said above I have tried to implement all functions from scratch but I have al
 
 # Contributing
 
-Do you want to contribute with any interesting idea? You're in te right place
-
-`1` Open an issue to discuss your idea
-
-`2` Fork the repo
-
-`3` Create a branch
-
-`4` Commit your changes
-
-`5` Push to the branch
-
-`6` Create a new pull request
-
-***New features and bugs reports are welcome***
+See [CONTRIBUTING.md](https://github.com/D3Ext/maldev/blob/main/CONTRIBUTING.md)
 
 # Disclaimer
 
-Creator isn't in charge of any and has no responsibility for any kind of:
+Creator has no responsibility for any kind of:
 
-- Unlawful or illegal use of the project.
-- Legal or Law infringement (acted in any country, state, municipality, place) by third parties and users.
-- Act against ethical and / or human moral, ethic, and peoples of the world.
-- Malicious act, capable of causing damage to third parties, promoted or distributed by third parties or the user through this software.
+- Illegal use of the project.
+- Law infringement by third parties and users.
+- Malicious act, capable of causing damage to third parties, promoted by the user through this software.
 
 # License
 
-This project is licensed under MIT
+This project is under MIT license
 
 Copyright © 2023, *D3Ext*
 

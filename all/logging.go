@@ -91,3 +91,31 @@ func SCyan(v ...interface{}) (string) {
   return logging.SCyan(v)
 }
 
+// == This functions return or print ASCII banners ==
+
+func GetBanner(str_to_convert string) (string) {
+  return logging.GetBanner(str_to_convert)
+}
+
+func PrintBanner(str_to_convert string) {
+  logging.PrintBanner(str_to_convert)
+}
+
+// == Time related functions ==
+
+func GetTime() (string) {
+  return logging.GetTime()
+}
+
+func TimePrintln(input string) {
+  logging.TimePrintln(input)
+}
+
+func TimePrint(input string) {
+  logging.TimePrint(input)
+}
+
+func TimeSprint(input string) (string) {
+  return logging.TimeSprint(input)
+}
+

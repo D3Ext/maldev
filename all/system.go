@@ -2,6 +2,10 @@ package all
 
 import "github.com/D3Ext/maldev/system"
 
+func GetHome() (string, error) {
+  return system.GetHome()
+}
+
 func GetGroups() ([]string, error) {
   return system.GetGroups()
 }
@@ -9,4 +13,5 @@ func GetGroups() ([]string, error) {
 func Env() ([]string) {
   return system.Env()
 }
+
 
