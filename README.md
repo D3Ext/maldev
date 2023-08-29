@@ -4,10 +4,14 @@
   </br>
   <h4 align="center">Golang library for malware development</h4>
   <h6 align="center"> Coded with 💙 by D3Ext </h6>
+</p>
+
+<p align="center">
 
   <a href="https://goreportcard.com/report/github.com/D3Ext/maldev">
       <img src="https://goreportcard.com/badge/github.com/D3Ext/maldev" alt="go report card">
   </a>
+
 </p>
 
 <p align="center">
