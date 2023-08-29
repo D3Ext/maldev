@@ -1,7 +1,6 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/D3Ext/maldev/main/assets/gopher-rasta.png" width="130" heigth="60" alt="Gopher"/>
   <h1 align="center">Maldev</h1>
-  </br>
   <h4 align="center">Golang library for malware development</h4>
   <h6 align="center"> Coded with 💙 by D3Ext </h6>
 </p>

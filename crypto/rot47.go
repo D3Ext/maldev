@@ -6,7 +6,7 @@ import (
 
 func Rot47(input string) string {
 	var result []string
-	for i := range input[:len(input)] {
+	for i := range input[:] {
 		j := int(input[i])
 		if (j >= 33) && (j <= 126) {
 			result = append(result, string(rune(33+((j+14)%94))))

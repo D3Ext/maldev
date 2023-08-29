@@ -113,7 +113,7 @@ func Copy(src string, dst string) error { // Copy file or directory (recursive)
 		}
 
 		directory, _ := os.Open(src)
-		objects, err := directory.Readdir(-1)
+		objects, _ := directory.Readdir(-1)
 
 		for _, obj := range objects { // Iterate over files and dirs
 			srcfilepointer := src + "/" + obj.Name()

@@ -33,8 +33,7 @@ func Uptime() int {
 }
 
 func (u Upt) Format() string {
-	fr := strings.Replace(u.Duration.String(), "h", "h ", 1)
-	fr = strings.Replace(u.Duration.String(), "m", "m ", 1)
+	fr := strings.Replace(u.Duration.String(), "m", "m ", 1)
 
 	return fr
 }

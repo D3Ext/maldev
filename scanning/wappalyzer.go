@@ -27,7 +27,7 @@ func Wappalyzer(url string) ([]string, error) {
 
 	fingerprints := wappalyzerClient.Fingerprint(resp.Header, data)
 
-	for entry, _ := range fingerprints {
+	for entry := range fingerprints {
 		technologies = append(technologies, entry)
 	}
 
