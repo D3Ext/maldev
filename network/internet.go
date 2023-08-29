@@ -8,21 +8,20 @@ https://stackoverflow.com/questions/50056144/check-for-internet-connection-from-
 */
 
 import (
-  "net/http"
-  "time"
+	"net/http"
+	"time"
 )
 
-func CheckInternet() (bool) {
-  client := http.Client{
-    Timeout: 3000 * time.Millisecond, // 3s timeout (more than neccessary)
-  }
-  
-  _, err := client.Get("https://google.com")
+func CheckInternet() bool {
+	client := http.Client{
+		Timeout: 3000 * time.Millisecond, // 3s timeout (more than necessary)
+	}
 
-  if err != nil {
-    return false
-  }
+	_, err := client.Get("https://google.com")
 
-  return true
+	if err != nil {
+		return false
+	}
+
+	return true
 }
-

@@ -1,13 +1,13 @@
 package system
 
 import (
-  "os/user"
+	"os/user"
 )
 
 func Whoami() (string, error) {
-  u, err := user.Current()
-  if err != nil {
-    return "", err
-  }
-  return u.Username, nil
+	u, err := user.Current()
+	if err != nil {
+		return "", err
+	}
+	return u.Username, nil
 }

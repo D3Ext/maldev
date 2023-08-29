@@ -53,21 +53,20 @@ type Contact struct {
 */
 
 import (
-
-  "github.com/likexian/whois"
-  wp "github.com/likexian/whois-parser"
+	"github.com/likexian/whois"
+	wp "github.com/likexian/whois-parser"
 )
 
 func WhoisDomain(dom string) (wp.WhoisInfo, error) {
-  raw_whois, err := whois.Whois(dom)
-  if err != nil {
-    return wp.WhoisInfo{}, err
-  }
+	raw_whois, err := whois.Whois(dom)
+	if err != nil {
+		return wp.WhoisInfo{}, err
+	}
 
-  results, err := wp.Parse(raw_whois)
-  if err != nil {
-    return wp.WhoisInfo{}, err
-  }
+	results, err := wp.Parse(raw_whois)
+	if err != nil {
+		return wp.WhoisInfo{}, err
+	}
 
-  return results, nil
+	return results, nil
 }

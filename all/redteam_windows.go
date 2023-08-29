@@ -1,73 +1,70 @@
 package all
 
 import (
-  "github.com/D3Ext/maldev/redteam"
-  "golang.org/x/sys/windows"
+	"github.com/D3Ext/maldev/redteam"
+	"golang.org/x/sys/windows"
 )
 
 func AutoDumpHashes() ([]redteam.Hash, error) {
-  return redteam.AutoDumpHashes()
+	return redteam.AutoDumpHashes()
 }
 
 func DumpSamHashes(system_file string, sam_file string) ([]redteam.Hash, error) {
-  return redteam.DumpSamHashes(system_file, sam_file)
+	return redteam.DumpSamHashes(system_file, sam_file)
 }
 
 func DumpDitHashes(system_file string, ntds_file string) ([]redteam.Hash, error) {
-  return redteam.DumpDitHashes(system_file, ntds_file)
+	return redteam.DumpDitHashes(system_file, ntds_file)
 }
 
-func StickyKeys() (error) {
-  return redteam.StickyKeys()
+func StickyKeys() error {
+	return redteam.StickyKeys()
 }
 
-func RevertStickyKeys() (error) {
-  return redteam.RevertStickyKeys()
+func RevertStickyKeys() error {
+	return redteam.RevertStickyKeys()
 }
 
 func GetToken() (windows.Token, error) {
-  return redteam.GetToken()
+	return redteam.GetToken()
 }
 
 func Impersonate(pid int) (windows.Token, error) {
-  return redteam.Impersonate(pid)
+	return redteam.Impersonate(pid)
 }
 
 func AllSandboxChecks(cfg redteam.SandboxConfig) (redteam.SandboxResults, error) {
-  return redteam.AllSandboxChecks(cfg)
+	return redteam.AllSandboxChecks(cfg)
 }
 
 func MemoryCheck() (int, error) {
-  return redteam.MemoryCheck()
+	return redteam.MemoryCheck()
 }
 
-func CpuCheck() (int) {
-  return redteam.CpuCheck()
+func CpuCheck() int {
+	return redteam.CpuCheck()
 }
 
-func UptimeCheck() (int) {
-  return redteam.UptimeCheck()
+func UptimeCheck() int {
+	return redteam.UptimeCheck()
 }
 
 func DiskCheck(path string) (int, error) {
-  return redteam.DiskCheck(path)
+	return redteam.DiskCheck(path)
 }
 
-func TimeCheck(timeout int) (int) {
-  return redteam.TimeCheck(timeout)
+func TimeCheck(timeout int) int {
+	return redteam.TimeCheck(timeout)
 }
 
-func InternetCheck() (bool) {
-  return redteam.InternetCheck()
+func InternetCheck() bool {
+	return redteam.InternetCheck()
 }
 
 func DriversCheck() (bool, string) {
-  return redteam.DriversCheck()
+	return redteam.DriversCheck()
 }
 
 func ProcessesCheck() (bool, string, error) {
-  return redteam.ProcessesCheck()
+	return redteam.ProcessesCheck()
 }
-
-
-

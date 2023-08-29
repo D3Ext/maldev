@@ -1,14 +1,14 @@
 package system
 
 import (
-  "os"
+	"os"
 )
 
 func Pwd() (string, error) { // Get current working directory
-  path, err := os.Getwd()
-  if err != nil {
-    return "", err
-  }
+	path, err := os.Getwd()
+	if err != nil {
+		return "", err
+	}
 
-  return path, nil
+	return path, nil
 }

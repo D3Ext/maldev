@@ -9,14 +9,12 @@ https://blog.kowalczyk.info/article/wOYk/advanced-command-execution-in-go-with-o
 */
 
 import (
-  ex "os/exec"
+	ex "os/exec"
 )
 
-func ExecuteCommand(comm string) (string) { // Return stdout and stderr
-  var out []byte
-  cmd := ex.Command("/bin/bash", "-c", comm)
-  out, _ = cmd.CombinedOutput()
-  return string(out)
+func ExecuteCommand(comm string) string { // Return stdout and stderr
+	var out []byte
+	cmd := ex.Command("/bin/bash", "-c", comm)
+	out, _ = cmd.CombinedOutput()
+	return string(out)
 }
-
-

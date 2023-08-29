@@ -11,53 +11,53 @@ https://pkg.go.dev/fmt
 */
 
 import (
-  "io"
-  "fmt"
-  "log"
+	"fmt"
+	"io"
+	"log"
 )
 
 // fmt functions
 
 func Print(v ...any) {
-  fmt.Print(v...)
+	fmt.Print(v...)
 }
 
 func Println(v ...any) {
-  fmt.Println(v...)
+	fmt.Println(v...)
 }
 
 func Printf(format string, v ...any) (int, error) {
-  return fmt.Printf(format, v...)
+	return fmt.Printf(format, v...)
 }
 
-func Sprintf(format string, v ...any) (string) {
-  return fmt.Sprintf(format, v...)
+func Sprintf(format string, v ...any) string {
+	return fmt.Sprintf(format, v...)
 }
 
 func Fprint(w io.Writer, a ...any) (n int, err error) {
-  return fmt.Fprint(w, a...)
+	return fmt.Fprint(w, a...)
 }
 
 func Fprintf(w io.Writer, format string, a ...any) (n int, err error) {
-  return fmt.Fprintf(w, format, a...)
+	return fmt.Fprintf(w, format, a...)
 }
 
-func Append(b []byte, a ...any) ([]byte) {
-  return fmt.Append(b, a...) 
+func Append(b []byte, a ...any) []byte {
+	return fmt.Append(b, a...)
 }
 
-func Appendf(b []byte, format string, a ...any) ([]byte) {
-  return fmt.Appendf(b, format, a...)
+func Appendf(b []byte, format string, a ...any) []byte {
+	return fmt.Appendf(b, format, a...)
 }
 
-func Appendln(b []byte, a ...any) ([]byte) {
-  return fmt.Appendln(b, a...)
+func Appendln(b []byte, a ...any) []byte {
+	return fmt.Appendln(b, a...)
 }
 
 // log functions
 
 func Panic(v ...any) {
-  log.Panic(v...)
+	log.Panic(v...)
 }
 
 func Panicf(format string, v ...any) {
@@ -65,21 +65,17 @@ func Panicf(format string, v ...any) {
 }
 
 func Panicln(v ...any) {
-  log.Panicln(v...)
+	log.Panicln(v...)
 }
 
 func Fatal(v ...any) {
-  log.Fatal(v...)
+	log.Fatal(v...)
 }
 
 func Fatalln(v ...any) {
-  log.Fatalln(v...)
+	log.Fatalln(v...)
 }
 
 func Fatalf(format string, v ...any) {
-  log.Fatalf(format, v...)
+	log.Fatalf(format, v...)
 }
-
-
-
-

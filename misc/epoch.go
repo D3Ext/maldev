@@ -8,16 +8,15 @@ https://stackoverflow.com/questions/43915900/how-to-convert-unix-time-to-time-ti
 */
 
 import (
-  "time"
+	"time"
 )
 
-func DateToEpoch(year, month, day, hour, minute, second int) (int) {
-  date := time.Date(year, time.Month(month), day, hour, minute, second, 0, time.Local)
-  return int(date.Unix())
+func DateToEpoch(year, month, day, hour, minute, second int) int {
+	date := time.Date(year, time.Month(month), day, hour, minute, second, 0, time.Local)
+	return int(date.Unix())
 }
 
-func EpochToDate(epoch int) (string) {
-  result := time.Unix(int64(epoch), 0)
-  return result.Format("2006-1-2 15:4:5")
+func EpochToDate(epoch int) string {
+	result := time.Unix(int64(epoch), 0)
+	return result.Format("2006-1-2 15:4:5")
 }
-

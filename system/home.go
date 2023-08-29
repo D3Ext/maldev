@@ -1,14 +1,14 @@
 package system
 
 import (
-  "os/user"
+	"os/user"
 )
 
 func GetHome() (string, error) {
-  u, err := user.Current()
-  if err != nil {
-    return "", err
-  }
+	u, err := user.Current()
+	if err != nil {
+		return "", err
+	}
 
-  return u.HomeDir, nil
+	return u.HomeDir, nil
 }

@@ -3,15 +3,13 @@ package all
 import "github.com/D3Ext/maldev/system"
 
 func GetHome() (string, error) {
-  return system.GetHome()
+	return system.GetHome()
 }
 
 func GetGroups() ([]string, error) {
-  return system.GetGroups()
+	return system.GetGroups()
 }
 
-func Env() ([]string) {
-  return system.Env()
+func Env() []string {
+	return system.Env()
 }
-
-

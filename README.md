@@ -1,6 +1,13 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/D3Ext/maldev/main/assets/gopher-rasta.png" width="130" heigth="60" alt="Gopher"/>
   <h1 align="center">Maldev</h1>
+  </br>
+  <h4 align="center">Golang library for malware development</h4>
+  <h6 align="center"> Coded with 💙 by D3Ext </h6>
+
+  <a href="https://goreportcard.com/report/github.com/D3Ext/maldev">
+      <img src="https://goreportcard.com/badge/github.com/D3Ext/maldev" alt="go report card">
+  </a>
 </p>
 
 <p align="center">
@@ -14,7 +21,7 @@
 
 # Introduction
 
-`maldev` aims to help malware developers, red teamers and anyone who is interested in cybersecurity. It uses native Golang code and some other useful packages like [Hooka](https://github.com/D3Ext/Hooka) which I created to perform complex low-level red teaming stuff. The project isn't finished yet and the API may be unstable so your code may break in a future, sorry about this. Anyway if you find a bug feel free to open an issue or create a pull-request which fixes it
+`maldev` aims to help malware developers, red teamers and anyone who is interested in cybersecurity. It uses native Golang code and some other useful packages like [Hooka](https://github.com/D3Ext/Hooka) which I created to perform complex low-level red teaming stuff. The project isn't finished yet but the official API is stable, anyway if you find a bug feel free to open an issue or create a pull-request which fixes it.
 
 # Features
 
@@ -140,7 +147,7 @@ import "github.com/D3Ext/maldev/crypto"
 
 # Examples
 
-In every directory there is a **README.md** which contains at least one example of every defined function, if you don't have enough creativity I encourage you to check out the `examples/` directory where I've developed some good examples which use ***maldev*** functions like a simple ransomware, a shellcode loader and much more
+In every directory there is a **README.md** which contains at least one example of every defined function, if you don't have enough creativity I encourage you to check out the [examples/](https://github.com/D3Ext/maldev/tree/main/examples) directory where I've developed some good examples which use ***maldev*** functions like a simple ransomware, a shellcode loader and much more
 
 # TODO
 
@@ -150,29 +157,21 @@ In every directory there is a **README.md** which contains at least one example 
 
 :black_square_button: Stable progress bars
 
-:black_square_button: Shikata Ga Nai polymorphic encoder
-
 # Third party
 
 As said above I have tried to implement all functions from scratch but I have also used some external packages:
 
-[columnize](https://github.com/ryanuber/columnize) to create tables and columns easily
-
-[go-netstat](https://github.com/cakturk/go-netstat) to retrieve info about local ports
-
-[gosecretsdump](https://github.com/C-Sto/gosecretsdump) used to dump hashes from SAM, NTDS and SYSTEM
-
-[BananaPhone](https://github.com/C-Sto/BananaPhone) to perform **CreateRemoteThread** shellcode injection technique
-
-[go-ps](https://github.com/mitchellh/go-ps) used to work with linux processes
-
-[go-sysinfo](https://github.com/elastic/go-sysinfo) useful to get system information mainly for Windows
-
-[wintoken](https://github.com/fourcorelabs/wintoken) used to interact with Windows API and getting privileges info
-
-[EDRHunt](https://github.com/FourCoreLabs/EDRHunt) used in `system/` to look for installed AVs/EDRs
-
-[go-figure](https://github.com/common-nighthawk/go-figure) to create banners easily
+```
+https://github.com/ryanuber/columnize
+https://github.com/cakturk/go-netstat
+https://github.com/C-Sto/gosecretsdump
+https://github.com/C-Sto/BananaPhone
+https://github.com/mitchellh/go-ps
+https://github.com/elastic/go-sysinfo
+https://github.com/fourcorelabs/wintoken
+https://github.com/FourCoreLabs/EDRHunt
+https://github.com/common-nighthawk/go-figure
+```
 
 # Contributing
 

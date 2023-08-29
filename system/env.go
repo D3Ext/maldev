@@ -1,9 +1,9 @@
 package system
 
 import (
-  "os"
+	"os"
 )
 
-func Env() ([]string) {
-  return os.Environ()
+func Env() []string {
+	return os.Environ()
 }
