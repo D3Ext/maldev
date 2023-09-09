@@ -9,21 +9,15 @@ import (
 	"github.com/D3Ext/maldev/shellcode"
 )
 
-func ParseFlags() (string, string, string) {
-	var pe_filename string
-	var output_filename string
-	var function_name string
-
-	flag.StringVar(&pe_filename, "p", "", "Portable Executable to convert to shellcode")
-	flag.StringVar(&output_filename, "o", "", "raw shellcode output file")
-	flag.StringVar(&function_name, "f", "", "function name to execute (if using msfvenom DLL use random name)")
-	flag.Parse()
-
-	return pe_filename, output_filename, function_name // Return all param values
-}
-
 func main() {
-	pe, output, function := ParseFlags()
+	var pe string
+	var output string
+	var function string
+
+	flag.StringVar(&pe, "p", "", "Portable Executable to convert to shellcode")
+	flag.StringVar(&output, "o", "", "raw shellcode output file")
+	flag.StringVar(&function, "f", "", "function name to execute (if using msfvenom DLL use random name)")
+	flag.Parse()
 
 	if (pe == "") || (output == "") || (function == "") {
 		l.Badln("Parameters missing! Example: ", os.Args[0], " -p evil.dll -f xyz -o shellcode.bin")

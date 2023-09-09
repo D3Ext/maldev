@@ -127,7 +127,7 @@ import (
 
 func main(){
   data := []byte("this is an example")
-  psk := []byte("ThisIsMySuperSecret32Password123")
+  psk := []byte("ThisIsMySuperSecret32Password123") // 32 bytes
 
   fmt.Println("Data:", string(data))
   fmt.Println("Key:", psk)
@@ -282,6 +282,40 @@ func main() {
   fmt.Println("Sha1: " + crypto.Sha1(example))
   fmt.Println("Sha256: " + crypto.Sha256(example))
   fmt.Println("Sha512: " + crypto.Sha512(example))
+}
+```
+
+## Triple DES
+
+```go
+package main
+
+import (
+  "fmt"
+  "log"
+  "github.com/D3Ext/maldev/crypto"
+)
+
+func main(){
+  data := []byte("this is an example")
+  triplekey := "12345678" + "12345678" + "12345678"
+
+  fmt.Println("Data:", string(data))
+  fmt.Println("Key:", triplekey)
+
+  ciphertext, err := crypto.TripleDesEncrypt(data, []byte(triplekey)) // Encrypt
+  if err != nil {
+    log.Fatal(err)
+  }
+
+  fmt.Println("Ciphertext:", ciphertext)
+
+  decoded, err := crypto.TripleDesDecrypt(ciphertext, []byte(triplekey)) // Decrypt
+  if err != nil {
+    log.Fatal(err)
+  }
+
+  fmt.Println("Decoded:", string(decoded))
 }
 ```
 

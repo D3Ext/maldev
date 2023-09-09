@@ -9,7 +9,7 @@ import (
 	"golang.org/x/crypto/chacha20poly1305"
 )
 
-// Encrypt data using given key
+// Encrypt data using given key (32 bytes)
 func Chacha20Encrypt(data []byte, key []byte) ([]byte, error) {
 	if len(key) != 32 {
 		return nil, errors.New("bad key length, expected 32 bytes")
@@ -33,7 +33,7 @@ func Chacha20Encrypt(data []byte, key []byte) ([]byte, error) {
 	return aead.Seal(nonce, nonce, data, nil), nil
 }
 
-// Decrypt data using given key
+// Decrypt data using given key (32 bytes)
 func Chacha20Decrypt(data []byte, key []byte) ([]byte, error) {
 	aead, err := chacha20poly1305.NewX(key)
 	if err != nil {

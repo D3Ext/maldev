@@ -21,19 +21,13 @@ import (
 	"github.com/D3Ext/maldev/misc"
 )
 
-func ParseFlags() (int, string) {
+func main() {
 	var pattern_length int
 	var pattern_to_search string
 
 	flag.IntVar(&pattern_length, "l", 0, "length of the pattern to create")
 	flag.StringVar(&pattern_to_search, "p", "", "pattern to search its offset")
 	flag.Parse()
-
-	return pattern_length, pattern_to_search // Return both values
-}
-
-func main() {
-	pattern_length, pattern_to_search := ParseFlags() // Parse CLI flags
 
 	if pattern_length != 0 && pattern_to_search != "" { // Check if two flags were especified to avoid error (just use one)
 		l.Badln("Bad parameters!")

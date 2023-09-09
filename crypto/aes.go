@@ -9,7 +9,6 @@ https://golangdocs.com/aes-encryption-decryption-in-golang
 */
 
 import (
-	"bytes"
 	"crypto/aes"
 	"crypto/cipher"
 	"crypto/rand"
@@ -60,17 +59,4 @@ func GenerateIV() ([]byte, error) {
 	}
 
 	return iv, nil
-}
-
-// ==================
-// Auxiliar functions
-func PKCS5Trimming(encrypt []byte) []byte {
-	padding := encrypt[len(encrypt)-1]
-	return encrypt[:len(encrypt)-int(padding)]
-}
-
-func PKCS5Padding(ciphertext []byte, blockSize int) []byte {
-	padding := blockSize - len(ciphertext)%blockSize
-	padtext := bytes.Repeat([]byte{byte(padding)}, padding)
-	return append(ciphertext, padtext...)
 }
