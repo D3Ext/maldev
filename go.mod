@@ -18,7 +18,7 @@ require (
 	github.com/likexian/whois v1.14.4
 	github.com/likexian/whois-parser v1.24.2
 	github.com/mitchellh/go-ps v1.0.0
-	github.com/projectdiscovery/wappalyzergo v0.0.79
+	github.com/projectdiscovery/wappalyzergo v0.0.109
 	github.com/ryanuber/columnize v2.1.2+incompatible
 	golang.org/x/crypto v0.11.0
 	golang.org/x/sys v0.10.0
