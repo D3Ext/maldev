@@ -16,7 +16,7 @@ require (
 	github.com/fourcorelabs/wintoken v1.0.0
 	github.com/go-ping/ping v1.1.0
 	github.com/likexian/whois v1.14.4
-	github.com/likexian/whois-parser v1.24.2
+	github.com/likexian/whois-parser v1.24.9
 	github.com/mitchellh/go-ps v1.0.0
 	github.com/projectdiscovery/wappalyzergo v0.0.79
 	github.com/ryanuber/columnize v2.1.2+incompatible
@@ -36,7 +36,7 @@ require (
 	github.com/hashicorp/errwrap v1.1.0 // indirect
 	github.com/hashicorp/go-multierror v1.1.1 // indirect
 	github.com/joeshaw/multierror v0.0.0-20140124173710-69b34d4ec901 // indirect
-	github.com/likexian/gokit v0.25.9 // indirect
+	github.com/likexian/gokit v0.25.13 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.18 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
