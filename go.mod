@@ -10,7 +10,7 @@ require (
 	github.com/briandowns/spinner v1.23.0
 	github.com/cakturk/go-netstat v0.0.0-20200220111822-e5b49efee7a5
 	github.com/common-nighthawk/go-figure v0.0.0-20210622060536-734e95fb86be
-	github.com/ecies/go/v2 v2.0.4
+	github.com/ecies/go/v2 v2.0.7
 	github.com/elastic/go-sysinfo v1.9.0
 	github.com/fatih/color v1.15.0
 	github.com/fourcorelabs/wintoken v1.0.0
@@ -20,15 +20,15 @@ require (
 	github.com/mitchellh/go-ps v1.0.0
 	github.com/projectdiscovery/wappalyzergo v0.0.79
 	github.com/ryanuber/columnize v2.1.2+incompatible
-	golang.org/x/crypto v0.9.0
-	golang.org/x/sys v0.9.0
+	golang.org/x/crypto v0.11.0
+	golang.org/x/sys v0.10.0
 )
 
 require (
 	github.com/Binject/debug v0.0.0-20230508195519-26db73212a7a // indirect
 	github.com/awgh/rawreader v0.0.0-20200626064944-56820a9c6da4 // indirect
 	github.com/bi-zone/go-fileversion v1.0.0 // indirect
-	github.com/decred/dcrd/dcrec/secp256k1/v4 v4.0.1 // indirect
+	github.com/decred/dcrd/dcrec/secp256k1/v4 v4.2.0 // indirect
 	github.com/elastic/go-windows v1.0.0 // indirect
 	github.com/ethereum/go-ethereum v1.12.1 // indirect
 	github.com/go-ole/go-ole v1.2.6 // indirect
@@ -44,8 +44,8 @@ require (
 	github.com/yusufpapurcu/wmi v1.2.2 // indirect
 	golang.org/x/net v0.10.0 // indirect
 	golang.org/x/sync v0.3.0 // indirect
-	golang.org/x/term v0.8.0 // indirect
-	golang.org/x/text v0.9.0 // indirect
+	golang.org/x/term v0.10.0 // indirect
+	golang.org/x/text v0.11.0 // indirect
 	golang.org/x/xerrors v0.0.0-20220517211312-f3a8303e98df // indirect
 	howett.net/plist v0.0.0-20181124034731-591f970eefbb // indirect
 )
