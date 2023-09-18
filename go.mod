@@ -15,7 +15,7 @@ require (
 	github.com/fatih/color v1.15.0
 	github.com/fourcorelabs/wintoken v1.0.0
 	github.com/go-ping/ping v1.1.0
-	github.com/likexian/whois v1.14.4
+	github.com/likexian/whois v1.15.1
 	github.com/likexian/whois-parser v1.24.9
 	github.com/mitchellh/go-ps v1.0.0
 	github.com/projectdiscovery/wappalyzergo v0.0.109
@@ -42,7 +42,7 @@ require (
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/prometheus/procfs v0.9.0 // indirect
 	github.com/yusufpapurcu/wmi v1.2.2 // indirect
-	golang.org/x/net v0.10.0 // indirect
+	golang.org/x/net v0.14.0 // indirect
 	golang.org/x/sync v0.3.0 // indirect
 	golang.org/x/term v0.12.0 // indirect
 	golang.org/x/text v0.13.0 // indirect
