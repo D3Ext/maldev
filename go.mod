@@ -11,7 +11,7 @@ require (
 	github.com/cakturk/go-netstat v0.0.0-20200220111822-e5b49efee7a5
 	github.com/common-nighthawk/go-figure v0.0.0-20210622060536-734e95fb86be
 	github.com/ecies/go/v2 v2.0.7
-	github.com/elastic/go-sysinfo v1.9.0
+	github.com/elastic/go-sysinfo v1.11.1
 	github.com/fatih/color v1.15.0
 	github.com/fourcorelabs/wintoken v1.0.0
 	github.com/go-ping/ping v1.1.0
