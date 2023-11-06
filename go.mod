@@ -21,7 +21,7 @@ require (
 	github.com/projectdiscovery/wappalyzergo v0.0.109
 	github.com/ryanuber/columnize v2.1.2+incompatible
 	golang.org/x/crypto v0.13.0
-	golang.org/x/sys v0.12.0
+	golang.org/x/sys v0.14.0
 )
 
 require (
