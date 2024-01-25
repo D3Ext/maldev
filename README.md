@@ -50,9 +50,9 @@ This are the different categories:
 - [Network](https://github.com/D3Ext/maldev/tree/main/network)
   - List all interfaces
   - Get info about an interface
-  - List active ports wih its info
+  - List active ports with its info
   - Check internet connection
-  - Get public ip
+  - Get public IP
   - Download a file from URL
   - Get status code from URL
   - Send http POST request with custom data
