@@ -1,9 +1,13 @@
 package all
 
 import (
-	"github.com/D3Ext/maldev/redteam"
+	"github.com/D3Ext/maldev/src/redteam"
 	"golang.org/x/sys/windows"
 )
+
+func ConvertDllToShellcode(dll_file string, func_name string, data string) ([]byte, error) {
+	return redteam.ConvertDllToShellcode(dll_file, func_name, data)
+}
 
 func AutoDumpHashes() ([]redteam.Hash, error) {
 	return redteam.AutoDumpHashes()
@@ -15,14 +19,6 @@ func DumpSamHashes(system_file string, sam_file string) ([]redteam.Hash, error) 
 
 func DumpDitHashes(system_file string, ntds_file string) ([]redteam.Hash, error) {
 	return redteam.DumpDitHashes(system_file, ntds_file)
-}
-
-func StickyKeys() error {
-	return redteam.StickyKeys()
-}
-
-func RevertStickyKeys() error {
-	return redteam.RevertStickyKeys()
 }
 
 func GetToken() (windows.Token, error) {
@@ -68,3 +64,4 @@ func DriversCheck() (bool, string) {
 func ProcessesCheck() (bool, string, error) {
 	return redteam.ProcessesCheck()
 }
+

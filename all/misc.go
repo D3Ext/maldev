@@ -1,6 +1,14 @@
 package all
 
-import "github.com/D3Ext/maldev/misc"
+import "github.com/D3Ext/maldev/src/misc"
+
+func RandomString(length int) string {
+	return misc.RandomString(length)
+}
+
+func RandomInt(max int, min int) int {
+	return misc.RandomInt(max, min)
+}
 
 func GeneratePattern(length int) string {
 	return misc.GeneratePattern(length)
@@ -24,14 +32,6 @@ func DateToEpoch(year, month, day, hour, minute, second int) int {
 
 func EpochToDate(epoch int) string {
 	return misc.EpochToDate(epoch)
-}
-
-func RandomString(length int) string {
-	return misc.RandomString(length)
-}
-
-func RandomInt(max int, min int) int {
-	return misc.RandomInt(max, min)
 }
 
 func GetRandomAgent() string {

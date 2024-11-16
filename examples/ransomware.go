@@ -15,7 +15,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/D3Ext/maldev/crypto"
+	"github.com/D3Ext/maldev/src/crypto"
 )
 
 var psk string = "ThisIsMySuperSecret32Password123"

@@ -1,7 +1,7 @@
 package all
 
 import (
-	"github.com/D3Ext/maldev/scanning"
+	"github.com/D3Ext/maldev/src/scanning"
 	wp "github.com/likexian/whois-parser"
 )
 
@@ -29,11 +29,11 @@ func PortscanCommon(ip string) ([]int, error) {
 	return scanning.PortscanCommon(ip)
 }
 
-func CheckOpenTcpPort(ip string, port string) bool {
+func CheckOpenTcpPort(ip string, port int) bool {
 	return scanning.CheckOpenTcpPort(ip, port)
 }
 
-func CheckOpenUdpPort(ip string, port string) bool {
+func CheckOpenUdpPort(ip string, port int) bool {
 	return scanning.CheckOpenUdpPort(ip, port)
 }
 

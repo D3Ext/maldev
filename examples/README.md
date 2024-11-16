@@ -1,6 +1,6 @@
 # Examples
 
-Here you can view some real examples in which the ***maldev*** functions are used
+Here you can take a look at some real examples in which the ***maldev*** functions are used to perform specific tasks:
 
 - Shellcode Encrypter
 - Shellcode Loader (to run encrypted shellcode in memory)

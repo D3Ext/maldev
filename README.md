@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/D3Ext/maldev/main/assets/gopher-rasta.png" width="130" heigth="60" alt="Gopher"/>
+  <img src="https://raw.githubusercontent.com/D3Ext/maldev/main/static/gopher-rasta.png" width="130" heigth="60" alt="Gopher"/>
   <h1 align="center">Maldev</h1>
   <h4 align="center">Golang library for malware development</h4>
   <h6 align="center">Coded with 💙 by D3Ext</h6>
@@ -16,20 +16,29 @@
 <p align="center">
   <a href="#features">Features</a> •
   <a href="#installation">Installation</a> •
-  <a href="#examples">Examples</a> •
-  <a href="#third-party">Third-party</a> •
-  <a href="#contributing">Contributing</a> •
-  <a href="#disclaimer">Disclaimer</a>
+  <a href="#usage">Usage</a> •
+  <a href="#examples">Examples</a>
 </p>
 
 # Introduction
 
-`maldev` aims to help malware developers, red teamers and anyone who is interested in cybersecurity. It uses native Golang code and some other useful packages like [Hooka](https://github.com/D3Ext/Hooka) which I created to perform complex low-level red teaming stuff. The project isn't finished yet but the official API is stable, anyway if you find a bug feel free to open an issue or create a pull-request which fixes it.
+`maldev` aims to help malware developers, red teamers, cybersecurity enthusiasts or simply Golang developers. Most of the available features are not too hard to implement, but it is simply better to have multiple functions with just importing one package. This project is not finished yet but the official API is mostly stable. Anyway if you find a bug feel free to open an issue or create a pull-request which fixes it.
 
 # Features
 
-This are the different categories:
+This are the different categories supported by `maldev`:
 
+- [System](https://github.com/D3Ext/maldev/tree/main/system)
+  - Whoami
+  - Get current dir
+  - Get home dir
+  - Get current user groups
+  - Find installed useful software
+  - List files and folders
+  - Get environment variables
+  - Get generic system information
+  - Get SID and RID from windows system
+  - Find installed AVs/EDRs
 - [Cryptography](https://github.com/D3Ext/maldev/tree/main/crypto)
   - AES
   - RC4
@@ -47,55 +56,6 @@ This are the different categories:
   - ChaCha20
   - Triple DES
   - Compare hashes
-- [Network](https://github.com/D3Ext/maldev/tree/main/network)
-  - List all interfaces
-  - Get info about an interface
-  - List active ports wih its info
-  - Check internet connection
-  - Get public ip
-  - Download a file from URL
-  - Get status code from URL
-  - Send http POST request with custom data
-- [Misc](https://github.com/D3Ext/maldev/tree/main/misc)
-  - Generate random strings
-  - Generate random integers
-  - Convert dates to epoch format
-  - Convert epoch to dates
-  - Convert text to leet
-- [Shellcode](https://github.com/D3Ext/maldev/tree/main/shellcode)
-  - Tons of shellcode injection techniques
-  - Retrieve shellcode from file
-  - Retrieve shellcode from url
-  - Write shellcode to file
-  - Convert DLL to shellcode (***sRDI***)
-- [Red Team](https://github.com/D3Ext/maldev/tree/main/redteam)
-  - 3 different ways to dump system hashes
-  - Steal token from PID (Impersonation)
-  - Enable/disable Sticky Keys backdoor
-  - Create malicious SCF on given path
-- [Antiforensics](https://github.com/D3Ext/maldev/tree/main/antiforensics)
-  - Wiping
-  - Timestomping
-- [Processes](https://github.com/D3Ext/maldev/tree/main/process)
-  - List all process
-  - Get process name by PID
-  - Get list of processes by name (i.e. firefox.exe)
-- [Exec](https://github.com/D3Ext/maldev/tree/main/exec)
-  - Execute bash commands
-  - Execute powershell commands
-  - Execute cmd commands
-  - Execute command with Token
-- [System](https://github.com/D3Ext/maldev/tree/main/system)
-  - Whoami
-  - Get current dir
-  - Get home dir
-  - Get current user groups
-  - Find installed useful software
-  - List files and folders
-  - Get environment variables
-  - Get generic system information
-  - Get SID and RID from windows system
-  - Find installed AVs/EDRs
 - [Scanning](https://github.com/D3Ext/maldev/tree/main/scanning)
   - Ping an ip
   - Hostscan
@@ -109,20 +69,56 @@ This are the different categories:
   - ASCII banners
   - Progress bars
   - Colors
-  - "log" and "fmt" wrappers
+- [Network](https://github.com/D3Ext/maldev/tree/main/network)
+  - List all network interfaces (i.e. eth0)
+  - Get info about an interface
+  - List active ports with its info
+  - Check internet connection
+  - Get public ip
+  - Download a file from URL
+  - Get status code from URL
+  - Send http POST request with custom data
+- [Misc](https://github.com/D3Ext/maldev/tree/main/misc)
+  - Generate random string
+  - Generate random integer
+  - Generate string of n length based on DeBruijn algorithm
+  - Convert date to epoch
+  - Convert epoch to date
+  - Convert text to l33t
+- [Red Team](https://github.com/D3Ext/maldev/tree/main/redteam)
+  - Multiple shellcode injection techniques
+  - Retrieve shellcode from file
+  - Retrieve shellcode from remote url
+  - Write shellcode to file
+  - Convert DLL to shellcode (***sRDI***)
+  - Multiple anti-sandboxing techniques
+  - 3 different ways to dump system hashes
+  - Steal token from PID (Impersonation)
+- [Processes](https://github.com/D3Ext/maldev/tree/main/process)
+  - List all process
+  - Get process name by PID
+  - Get PIDs of processes by name (i.e. firefox.exe)
+- [Exec](https://github.com/D3Ext/maldev/tree/main/exec)
+  - Execute bash commands
+  - Execute powershell commands
+  - Execute cmd commands
+  - Execute command with Token
 - [Working with slices](https://github.com/D3Ext/maldev/tree/main/slices)
-  - Check if contains a string
-  - Check if contains a string (insensitive)
+  - Check if a slice contains a string
+  - Check if a slice contains a string (insensitive)
   - Remove duplicates from []string
   - Remove duplicates from []int
   - Lowercase all characters from []string entries
+  - Uppercase all characters from []string entries
 - [Working with files](https://github.com/D3Ext/maldev/tree/main/files)
   - Check if file exists
   - Check if path is file
   - Check if path is dir
   - Copy a file or dir (recursive)
   - Get content of a file
-  - Directly create a file with content
+  - Create a file with content
+  - Wipe a file
+  - Timestomping (change file timestamps)
 
 # Installation
 
@@ -142,28 +138,22 @@ import (
 )
 ```
 
-Anyway if you want to use functions from an especific topic, you can do it like this:
+Anyway if you want to use functions from an especific topic, you can do so like this:
 
 > Example with cryptography
 ```go
-import "github.com/D3Ext/maldev/crypto"
+import (
+    "github.com/D3Ext/maldev/crypto"
+)
 ```
 
 # Examples
 
-In every directory there is a **README.md** which contains at least one example of every defined function, if you don't have enough creativity I encourage you to check out the [examples/](https://github.com/D3Ext/maldev/tree/main/examples) directory where I've developed some good examples which use ***maldev*** functions like a simple ransomware, a shellcode loader and much more
-
-# TODO
-
-:black_square_button: Kerberos protocol implementation
-
-:black_square_button: Publish official package documentation (pkg.go.dev)
-
-:black_square_button: Stable progress bars
+In every directory there is a **README.md** which contains at least one example of every defined function. You may also want to take a look at the [examples/](https://github.com/D3Ext/maldev/tree/main/examples) directory where you can find simple tools that use ***maldev***.
 
 # Third party
 
-As said above I have tried to implement all functions from scratch but I have also used some external packages:
+These are all the 3rd-party used packages:
 
 ```
 https://github.com/ryanuber/columnize
@@ -177,22 +167,21 @@ https://github.com/FourCoreLabs/EDRHunt
 https://github.com/common-nighthawk/go-figure
 ```
 
-# Contributing
+# TODO
 
-See [CONTRIBUTING.md](https://github.com/D3Ext/maldev/blob/main/CONTRIBUTING.md)
+- ~~new features~~
+- ~~redesigned project structure~~
+- ~~some categories has been merged into the other ones~~
+- ~~general improvement~~
 
 # Disclaimer
 
-Creator has no responsibility for any kind of:
-
-- Illegal use of the project.
-- Law infringement by third parties and users.
-- Malicious act, capable of causing damage to third parties, promoted by the user through this software.
+Creator has no responsibility for any kind of illegal use of the project
 
 # License
 
 This project is under MIT license
 
-Copyright © 2023, *D3Ext*
+Copyright © 2024, *D3Ext*
 
 

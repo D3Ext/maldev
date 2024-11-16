@@ -3,8 +3,12 @@ package all
 import (
 	"net/url"
 
-	"github.com/D3Ext/maldev/network"
+	"github.com/D3Ext/maldev/src/network"
 )
+
+func GetAllInterfaces() ([]string, error) {
+	return network.GetAllInterfaces()
+}
 
 func DownloadFile(file_url string) error {
 	return network.DownloadFile(file_url)
@@ -12,10 +16,6 @@ func DownloadFile(file_url string) error {
 
 func PostHttpReq(url string, post_data url.Values, timeout int) (network.RequestInfo, error) {
 	return network.PostHttpReq(url, post_data, timeout)
-}
-
-func ListAllInterfaces() ([]string, error) {
-	return network.ListAllInterfaces()
 }
 
 func GetInterfaceInfo(interface_name string) (network.CustomInterface, error) {

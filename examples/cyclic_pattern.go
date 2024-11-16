@@ -17,8 +17,8 @@ import (
 	"strings"
 
 	// Maldev packages
-	l "github.com/D3Ext/maldev/logging"
-	"github.com/D3Ext/maldev/misc"
+	l "github.com/D3Ext/maldev/src/logging"
+	"github.com/D3Ext/maldev/src/misc"
 )
 
 func main() {
@@ -29,29 +29,30 @@ func main() {
 	flag.StringVar(&pattern_to_search, "p", "", "pattern to search its offset")
 	flag.Parse()
 
-	if pattern_length != 0 && pattern_to_search != "" { // Check if two flags were especified to avoid error (just use one)
-		l.Badln("Bad parameters!")
+	if (pattern_length != 0 && pattern_to_search != "") { // Check if two flags were especified to avoid error (just use one)
+		l.Error("Bad parameters!")
 		fmt.Println("Usage: ./cyclic_pattern -l 256")
 		fmt.Println("       ./cyclic_pattern -p <pattern to search>")
 		os.Exit(0)
-	} else if pattern_length == 0 && pattern_to_search == "" {
+	} else if (pattern_length == 0 && pattern_to_search == "") {
+    fmt.Println("cyclic_pattern:\n")
 		flag.PrintDefaults()
 		os.Exit(0)
 	}
 
-	if pattern_length != 0 {
-		l.Infoln("Pattern length: " + strconv.Itoa(pattern_length))
+	if (pattern_length != 0) {
+		l.Info("Pattern length: " + strconv.Itoa(pattern_length))
 		cyclic_pattern := misc.GeneratePattern(pattern_length) // Create cyclic pattern using De Brujin algorithm
-		l.Goodln("Cyclic pattern: " + cyclic_pattern)
+		l.Success("Cyclic pattern: " + cyclic_pattern)
 		os.Exit(0) // Exit program
-	} else if pattern_to_search != "" {
-		cyclic_pattern := misc.GeneratePattern(50000)
-		if strings.Contains(cyclic_pattern, pattern_to_search) {
-			l.Infoln("Pattern to search: " + l.SCyan(pattern_to_search))
+	} else if (pattern_to_search != "") {
+		cyclic_pattern := misc.GeneratePattern(5000)
+		if (strings.Contains(cyclic_pattern, pattern_to_search)) {
+			l.Info("Pattern to search: " + l.SCyan(pattern_to_search))
 			offset := misc.GetPatternOffset(pattern_to_search)
-			l.Goodln("Offset found at: " + l.SCyan(strconv.Itoa(offset)))
+			l.Success("Offset found at: " + l.SCyan(strconv.Itoa(offset)))
 		} else {
-			l.Badln("Especified pattern offset not found!")
+			l.Error("Especified pattern offset not found!")
 			os.Exit(0)
 		}
 	}

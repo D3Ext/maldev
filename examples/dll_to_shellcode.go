@@ -2,11 +2,13 @@ package main
 
 import (
 	"flag"
+  "log"
+  "fmt"
 	"os"
 	"time"
 
-	l "github.com/D3Ext/maldev/logging"
-	"github.com/D3Ext/maldev/shellcode"
+	l "github.com/D3Ext/maldev/src/logging"
+	"github.com/D3Ext/maldev/src/redteam"
 )
 
 func main() {
@@ -20,23 +22,25 @@ func main() {
 	flag.Parse()
 
 	if (pe == "") || (output == "") || (function == "") {
-		l.Badln("Parameters missing! Example: ", os.Args[0], " -p evil.dll -f xyz -o shellcode.bin")
+    fmt.Println("dll_to_shellcode:")
 		flag.PrintDefaults()
+    fmt.Println()
+    l.Error("Parameters missing! Example: dll_to_shellcode -p evil.dll -f xyz -o shellcode.bin")
 		os.Exit(0)
 	}
 
-	l.Infoln("Converting " + pe + " to independent position shellcode...")
-	sc, err := shellcode.ConvertDllToShellcode(pe, function, "")
+	l.Info("Converting " + pe + " to independent position shellcode...")
+	sc, err := redteam.ConvertDllToShellcode(pe, function, "")
 	if err != nil {
-		l.Fatal(err)
+		log.Fatal(err)
 	}
 	time.Sleep(200 * time.Millisecond)
-	l.Infoln("Writing raw shellcode to " + output)
+	l.Info("Writing raw shellcode to " + output)
 
-	err = shellcode.WriteShellcodeToFile(output, sc)
+	err = redteam.WriteShellcodeToFile(output, sc)
 	if err != nil {
-		l.Fatal(err)
+		log.Fatal(err)
 	}
 
-	l.Goodln("Process completed!")
+	l.Success("Process completed!")
 }

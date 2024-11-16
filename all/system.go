@@ -1,6 +1,6 @@
 package all
 
-import "github.com/D3Ext/maldev/system"
+import "github.com/D3Ext/maldev/src/system"
 
 func GetHome() (string, error) {
 	return system.GetHome()

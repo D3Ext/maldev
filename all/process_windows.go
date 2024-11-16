@@ -1,6 +1,6 @@
 package all
 
-import "github.com/D3Ext/maldev/process"
+import "github.com/D3Ext/maldev/src/process"
 
 func GetProcesses() ([]process.WindowsProcess, error) {
 	return process.GetProcesses()

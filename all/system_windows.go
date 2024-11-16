@@ -1,6 +1,6 @@
 package all
 
-import "github.com/D3Ext/maldev/system"
+import "github.com/D3Ext/maldev/src/system"
 
 func GetEdrInfo() (*system.EdrInfo, error) {
 	return system.GetEdrInfo()

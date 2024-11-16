@@ -1,0 +1,72 @@
+- Merge pull request #8 from D3Ext/dependabot/go_modules/github.com/likexian/whois-parser-1.24.9
+- Merge pull request #7 from D3Ext/dependabot/go_modules/github.com/projectdiscovery/wappalyzergo-0.0.109
+- Bump github.com/likexian/whois-parser from 1.24.2 to 1.24.9
+- Bump github.com/projectdiscovery/wappalyzergo from 0.0.79 to 0.0.109
+- Merge pull request #6 from D3Ext/dependabot/go_modules/golang.org/x/crypto-0.13.0
+- Bump golang.org/x/crypto from 0.4.0 to 0.13.0
+- Merge pull request #5 from D3Ext/dependabot/go_modules/github.com/ecies/go/v2-2.0.7
+- Update dependabot.yml
+- Bump github.com/ecies/go/v2 from 2.0.4 to 2.0.7
+- Merge pull request #4 from D3Ext/dependabot/go_modules/github.com/ethereum/go-ethereum-1.12.1
+- Create dependabot.yml
+- Bump github.com/ethereum/go-ethereum from 1.10.17 to 1.12.1
+- 3 DES encryption
+- Golang format fixes using gometalinter
+- README fix
+- fixes, little changes and more
+- chacha20 encryption/decryption support and little changes
+- changes and "all" directory to use all functions at the same time
+- Merge pull request #1 from D3Ext/dependabot/go_modules/golang.org/x/net-0.7.0
+- Bump golang.org/x/net from 0.3.0 to 0.7.0
+- bug issue template added
+- Create FUNDING.yml
+- Delete dll_moded.bin
+- new sandbox functions and other example
+- weird fix on README.md
+- Update README.md
+- fixes, sandboxing functions (WIP) and more
+- Update exec.go
+- Update README.md
+- Update README.md
+- Update README.md
+- Delete dll_moded.bin
+- Update README.md
+- more functions, better naming, wrappers and general improvements
+- Delete README.md
+- Update README.md
+- more functions
+- Update README.md
+- Update README.md
+- Update createremotethread.go
+- Update earlybirdapc.go
+- Update createprocess.go
+- Update uuidfromstring.go
+- Update uuidfromstring.go
+- Update uuidfromstring.go
+- Update README.md
+- Update README.md
+- Update README.md
+- Create README.md
+- init
+- fix
+- fix
+- Update README.md
+- initial commit
+- Update README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- Initial commit

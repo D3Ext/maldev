@@ -1,53 +1,28 @@
 package all
 
-import "github.com/D3Ext/maldev/logging"
+import "github.com/D3Ext/maldev/src/logging"
 
-// Println functions
-func Goodln(v ...interface{}) {
-	logging.Goodln(v...)
+func Success(v ...interface{}) {
+  logging.Success(v...)
 }
 
-func Badln(v ...interface{}) {
-	logging.Badln(v...)
-}
-
-func Infoln(v ...interface{}) {
-	logging.Infoln(v...)
-}
-
-func Greenln(v ...interface{}) {
-	logging.Greenln(v...)
-}
-
-func Redln(v ...interface{}) {
-	logging.Redln(v...)
-}
-
-func Purpleln(v ...interface{}) {
-	logging.Purpleln(v...)
-}
-
-func Blueln(v ...interface{}) {
-	logging.Blueln(v...)
-}
-
-func Cyanln(v ...interface{}) {
-	logging.Cyanln(v...)
-}
-
-// == Separator between Println and Print functions ==
-
-func Good(v ...interface{}) {
-	logging.Good(v...)
-}
-
-func Bad(v ...interface{}) {
-	logging.Bad(v...)
+func Error(v ...interface{}) {
+  logging.Error(v...)
 }
 
 func Info(v ...interface{}) {
-	logging.Info(v...)
+  logging.Info(v...)
 }
+
+func Warning(v ...interface{}) {
+  logging.Warning(v...)
+}
+
+func Debug(v ...interface{}) {
+  logging.Debug(v...)
+}
+
+// Colours functions
 
 func Green(v ...interface{}) {
 	logging.Green(v...)
@@ -101,20 +76,7 @@ func PrintBanner(str_to_convert string) {
 	logging.PrintBanner(str_to_convert)
 }
 
-// == Time related functions ==
-
 func GetTime() string {
 	return logging.GetTime()
 }
 
-func TimePrintln(input string) {
-	logging.TimePrintln(input)
-}
-
-func TimePrint(input string) {
-	logging.TimePrint(input)
-}
-
-func TimeSprint(input string) string {
-	return logging.TimeSprint(input)
-}

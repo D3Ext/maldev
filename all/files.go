@@ -1,6 +1,6 @@
 package all
 
-import "github.com/D3Ext/maldev/files"
+import "github.com/D3Ext/maldev/src/files"
 
 func Exists(src string) bool {
 	return files.Exists(src)
@@ -29,3 +29,12 @@ func Move(src string, dst string) error {
 func Copy(src string, dst string) error {
 	return files.Copy(src, dst)
 }
+
+func Wipe(src string) error {
+	return files.Wipe(src)
+}
+
+func Timestomp(src string, count int) error {
+	return files.Timestomp(src, count)
+}
+
