@@ -28,7 +28,7 @@
 
 This are the different categories supported by `maldev`:
 
-- [System](https://github.com/D3Ext/maldev/tree/main/system)
+- [System](https://github.com/D3Ext/maldev/tree/main/src/system)
   - Whoami
   - Get current dir
   - Get home dir
@@ -39,7 +39,7 @@ This are the different categories supported by `maldev`:
   - Get generic system information
   - Get SID and RID from windows system
   - Find installed AVs/EDRs
-- [Cryptography](https://github.com/D3Ext/maldev/tree/main/crypto)
+- [Cryptography](https://github.com/D3Ext/maldev/tree/main/src/crypto)
   - AES
   - RC4
   - Xor
@@ -56,7 +56,7 @@ This are the different categories supported by `maldev`:
   - ChaCha20
   - Triple DES
   - Compare hashes
-- [Scanning](https://github.com/D3Ext/maldev/tree/main/scanning)
+- [Scanning](https://github.com/D3Ext/maldev/tree/main/src/scanning)
   - Ping an ip
   - Hostscan
   - Portscan
@@ -64,12 +64,12 @@ This are the different categories supported by `maldev`:
   - Check if a domain uses http or https
   - Whois
   - Wappalyzer (identify technologies)
-- [Logging](https://github.com/D3Ext/maldev/tree/main/logging)
+- [Logging](https://github.com/D3Ext/maldev/tree/main/src/logging)
   - Status functions
   - ASCII banners
   - Progress bars
   - Colors
-- [Network](https://github.com/D3Ext/maldev/tree/main/network)
+- [Network](https://github.com/D3Ext/maldev/tree/main/src/network)
   - List all network interfaces (i.e. eth0)
   - Get info about an interface
   - List active ports with its info
@@ -78,14 +78,14 @@ This are the different categories supported by `maldev`:
   - Download a file from URL
   - Get status code from URL
   - Send http POST request with custom data
-- [Misc](https://github.com/D3Ext/maldev/tree/main/misc)
+- [Misc](https://github.com/D3Ext/maldev/tree/main/src/misc)
   - Generate random string
   - Generate random integer
   - Generate string of n length based on DeBruijn algorithm
   - Convert date to epoch
   - Convert epoch to date
   - Convert text to l33t
-- [Red Team](https://github.com/D3Ext/maldev/tree/main/redteam)
+- [Red Team](https://github.com/D3Ext/maldev/tree/main/src/redteam)
   - Multiple shellcode injection techniques
   - Retrieve shellcode from file
   - Retrieve shellcode from remote url
@@ -94,23 +94,23 @@ This are the different categories supported by `maldev`:
   - Multiple anti-sandboxing techniques
   - 3 different ways to dump system hashes
   - Steal token from PID (Impersonation)
-- [Processes](https://github.com/D3Ext/maldev/tree/main/process)
+- [Processes](https://github.com/D3Ext/maldev/tree/main/src/process)
   - List all process
   - Get process name by PID
   - Get PIDs of processes by name (i.e. firefox.exe)
-- [Exec](https://github.com/D3Ext/maldev/tree/main/exec)
+- [Exec](https://github.com/D3Ext/maldev/tree/main/src/exec)
   - Execute bash commands
   - Execute powershell commands
   - Execute cmd commands
   - Execute command with Token
-- [Working with slices](https://github.com/D3Ext/maldev/tree/main/slices)
+- [Working with slices](https://github.com/D3Ext/maldev/tree/main/src/slices)
   - Check if a slice contains a string
   - Check if a slice contains a string (insensitive)
   - Remove duplicates from []string
   - Remove duplicates from []int
   - Lowercase all characters from []string entries
   - Uppercase all characters from []string entries
-- [Working with files](https://github.com/D3Ext/maldev/tree/main/files)
+- [Working with files](https://github.com/D3Ext/maldev/tree/main/src/files)
   - Check if file exists
   - Check if path is file
   - Check if path is dir
@@ -143,7 +143,7 @@ Anyway if you want to use functions from an especific topic, you can do so like 
 > Example with cryptography
 ```go
 import (
-    "github.com/D3Ext/maldev/crypto"
+    "github.com/D3Ext/maldev/src/crypto"
 )
 ```
 
