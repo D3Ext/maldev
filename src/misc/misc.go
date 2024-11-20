@@ -25,7 +25,7 @@ func RandomString(length int) string { // Return random string passing an intege
 	return string(b)
 }
 
-func RandomInt(max int, min int) int { // Return a random number between max and min
+func RandomInt(min int, max int) int { // Return a random number between max and min
 	rand.Seed(time.Now().UnixNano())
 	rand_int := rand.Intn(max-min+1) + min
 	return rand_int
